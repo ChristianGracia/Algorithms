@@ -10,3 +10,20 @@ function containsDuplicates(a)
     }
     return false;
 }
+
+
+//added alt solution that is faster
+
+function containsDuplicates(a) 
+{
+    var seen = {}
+    
+    for (let num = 0; num < a.length; num++){
+        if (seen[a[num]]== true){
+            return true;
+        }
+        seen[a[num]] = true;
+    }
+    return false;
+}
+
