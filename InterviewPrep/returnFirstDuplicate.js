@@ -31,13 +31,16 @@ function firstDuplicate(a) {
 
 
 function doesContain(a) {
-    function firstDuplicate(a) {
+    function firstDuplicate(a) 
+    {
         var size = a.length;
 
-        for (var i = 0; i < size;) {
+        for (var i = 0; i < size;) 
+        {
 
 
-            if (a.indexOf(a[i], i + 1) > -1) {
+            if (a.indexOf(a[i], i + 1) > -1) 
+            {
                 return a[i];
             }
             else i++;
