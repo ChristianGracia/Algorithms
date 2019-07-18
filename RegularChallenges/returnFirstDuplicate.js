@@ -6,39 +6,18 @@ var a = [1, 1, 4, 3, 5, 3, 7, 4, 4];
 
 
 function doesContain(a){
-    
-    var size = a.length;
+    function firstDuplicate(a) {
+     var size = a.length;
     
     for ( var i = 0; i < size;){
        
        
        if(a.indexOf(a[i], i +1) > -1){
-           console.log(a[i]);
-           return 0;
+           return a[i];
        }
-       else i ++;
+       else i++;
     }
+    return -1;
 }
 
-
-doesContain(a);
-
-// function doesContain(a) {
-//     var check1 = 0;
-//     var check = 0;
-    
-//     for (var i = 0; i < a.length; i++) {
-//         if (a.indexOf(a[i], i + 1) > -1) {
-//             check1 = a[i];
-            
-            
-//             if (a.indexOf(a[i]) < a.indexOf(check)){
-//                 check = check1;
-//             }
-//         }
-//     }
-//     return check1;
-
-// }
-
-// console.log(doesContain(a));
+}
