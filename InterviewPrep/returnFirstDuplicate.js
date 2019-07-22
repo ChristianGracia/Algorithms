@@ -3,6 +3,8 @@
 
 var a = [1, 1, 4, 3, 5, 3, 7, 4, 4];
 
+//faster function using map()
+
 
 function firstDuplicate(a) {
 
@@ -29,6 +31,9 @@ function firstDuplicate(a) {
 }
 
 
+
+
+//slower
 
 function doesContain(a) {
     function firstDuplicate(a) 

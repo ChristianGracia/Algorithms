@@ -4,3 +4,6 @@ def fixMessage(message):
     firstChar.toUpper()
     restMessage = slice(1)
     return message[firstChar].toUpper()
+
+
+# unfinished

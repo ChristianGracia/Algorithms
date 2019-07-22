@@ -16,3 +16,5 @@ function firstNotRepeatingCharacter(s) {
     }
 
 }
+
+//needs work
