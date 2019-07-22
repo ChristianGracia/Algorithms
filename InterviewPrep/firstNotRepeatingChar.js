@@ -4,8 +4,14 @@ function firstNotRepeatingCharacter(s) {
     
     let arrMap = new Map();
     
+    let key = "key";
+    
     for (var i = 0; i < s.length;){
-        arrMap.set(s.charAt(i), 'hi')
+       
+        if (arrMap.find(s.charAt(i)))
+        {
+             arrMap.set(s.charAt(i), key);
+        }
         
     }
 
