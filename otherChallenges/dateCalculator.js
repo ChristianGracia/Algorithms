@@ -1,5 +1,7 @@
 function dateCheck(month,year) {
     
+    // this suprisingly works
+    
     var date = new Date();
     var currentMonth = date.getMonth();
     var currentYear = date.getFullYear();
@@ -24,12 +26,16 @@ function dateCheck(month,year) {
     {
         monthsAfter++;
     }
-    
+
     var total = (monthsTill/12) + (yearsTill) + (monthsAfter/12);
     var totalFixed = total.toFixed(2);
     
     console.log("total is " + totalFixed);
 }
 
-dateCheck(6,2014);
+dateCheck(12,2014);
 
+console.log(Date.now())
+
+var date1 = new Date(6, 1950);
+console.log(date1);
