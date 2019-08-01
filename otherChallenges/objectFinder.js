@@ -51,7 +51,7 @@ var query = "foo";
 function objectFind2(arr, query) {
     var arr1 = []
     for (var i = 0; i < arr.length; i++){
-        if (Object.values(arr[i]).indexOf('foo') > -1){
+        if (Object.values(arr[i]).indexOf(query) > -1){
             arr1.push(i)
         }
     }
