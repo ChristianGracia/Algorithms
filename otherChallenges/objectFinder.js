@@ -32,7 +32,7 @@ function objectFind1(arr, key, value) {
             arr1.push(i);
         }
     }
-    console.log(arr1)
+    console.log(arr1);
 
 
 
@@ -49,13 +49,13 @@ var query = "foo";
 
 
 function objectFind2(arr, query) {
-    var arr1 = []
-    for (var i = 0; i < arr.length; i++){
-        if (Object.values(arr[i]).indexOf(query) > -1){
-            arr1.push(i)
+    var arr1 = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (Object.values(arr[i]).indexOf(query) > -1) {
+            arr1.push(i);
         }
     }
-    console.log(arr1)
+    console.log(arr1);
 }
 
 objectFind2(array2, query);
