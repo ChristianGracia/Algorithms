@@ -6,7 +6,7 @@
 
 var size = 9;
 var start = [0, 0];
-var instructions = [{ heading: "SW", steps: 2 }]
+var instructions = [{ heading: "NW", steps: 10 }]
 
 function treasureHunt(size, start, instructions) {
     var currentPosition = start;
@@ -35,7 +35,7 @@ function treasureHunt(size, start, instructions) {
         if (instructions[j].heading == "W") {
             currentPosition[0] -= instructions[j].steps;
             if (currentPosition[0] < 0) {
-                currentPosition[0] = currentPosition += size;
+                currentPosition[0] = currentPosition[0] + size;
             }
         }
         if (instructions[j].heading == "NW") {
@@ -45,7 +45,7 @@ function treasureHunt(size, start, instructions) {
                 currentPosition[1] = currentPosition[1] % size;
             }
             if (currentPosition[0] < 0) {
-                currentPosition[0] = currentPosition[0] += size;
+                currentPosition[0] = (currentPosition[0] % size) + size
             }
         }
         if (instructions[j].heading == "NE") {
@@ -62,7 +62,7 @@ function treasureHunt(size, start, instructions) {
             currentPosition[0] += instructions[j].steps;
             currentPosition[1] -= instructions[j].steps;
             if (currentPosition[1] < 0) {
-                currentPosition[1] = size - (currentPosition[1] % size)
+                currentPosition[1] = -(currentPosition[1] % size);
             }
             if (currentPosition[0] > size) {
                 currentPosition[0] = currentPosition[0] % size;
@@ -75,7 +75,7 @@ function treasureHunt(size, start, instructions) {
                 currentPosition[1] = size + (currentPosition[1] % size)
             }
             if (currentPosition[0] < 0) {
-                 currentPosition[0] = currentPosition[0] + size;
+                currentPosition[0] = (currentPosition[0] % size) + size;
             }
         }
 
