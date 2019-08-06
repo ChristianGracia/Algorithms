@@ -4,6 +4,8 @@
 // must start and end with a one
 // first nontrivial to must not be prime
 
+//find coins to skip
+
 var coin = 1001;
 
 for (var i = 2; i < 11; i++){
