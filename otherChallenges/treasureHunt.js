@@ -42,6 +42,15 @@ function treasureHunt(size, start, instructions) {
     for (var j = 0; j < instructions.length; j++) {
         console.log(instructions[j].heading);
 
+
+        if (currentPosition == trap) {
+            console.log("You are dead");
+            break;
+        }
+
+
+
+
         if (instructions[j].heading == "N") {
             currentPosition[1] += instructions[j].steps;
             if (currentPosition[1] > size) {
@@ -105,6 +114,15 @@ function treasureHunt(size, start, instructions) {
             if (currentPosition[0] < 0) {
                 currentPosition[0] = (currentPosition[0] % size) + size;
             }
+        }
+
+        var trap = [8, 8];
+        console.log(currentPosition);
+        console.log(trap);
+        if (currentPosition == trap) {
+            console.log("hi");
+
+
         }
 
     }
