@@ -6,7 +6,35 @@
 
 var size = 9;
 var start = [0, 0];
-var instructions = [{ heading: "SE", steps: 10 }]
+
+var instructions = [{
+    heading: "SE",
+    steps: 10
+}, {
+    heading: "N",
+    steps: 5
+}, {
+    heading: "SW",
+    steps: 13
+}, {
+    heading: "E",
+    steps: 5
+}, {
+    heading: "W",
+    steps: 10
+}, {
+    heading: "NE",
+    steps: 5
+}, {
+    heading: "S",
+    steps: 15
+}, {
+    heading: "W",
+    steps: 7
+}, {
+    heading: "NW",
+    steps: 3
+}]
 
 function treasureHunt(size, start, instructions) {
     var currentPosition = start;
