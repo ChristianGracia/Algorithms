@@ -2,6 +2,7 @@ const readline = require("readline");
 
 function masterGame() {
   var code = "12341234";
+  var flag = false;
 
   const rl = readline.createInterface({
     input: process.stdin,
@@ -13,6 +14,8 @@ function masterGame() {
 
     if (masterMind(guess, code) == 8) {
       console.log("you win!");
+      flag = true;
+      return 0;
     }
     if (guessCounter == 8) {
       console.log("you lose");
