@@ -1,58 +1,61 @@
+//this program askes a user to input a guess of what the secret code may be
+//and returns the number of correct characters and the number
+//of correct characters in position, the user has 8 tries to guess the code
+
 const readline = require("readline");
 
 function masterGame() {
-  var code = "12341234";
-  var flag = false;
+    var code = "12341234";
 
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  rl.question("What is your guess? ", guess => {
-    console.log(`Guess: ${guess}`);
-    rl.close();
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    rl.question("What is your guess? ", guess => {
+        console.log(`Guess: ${guess}`);
+        rl.close();
 
-    if (masterMind(guess, code) == 8) {
-      console.log("you win!");
-      flag = true;
-      return 0;
-    }
-    if (guessCounter == 8) {
-      console.log("you lose");
-    } else {
-      masterGame();
-    }
-  });
+        if (masterMind(guess, code) == 8) {
+            console.log("you win!");
+            return 0;
+        }
+        if (guessCounter == 8) {
+            console.log("you lose");
+        }
+        else {
+            masterGame();
+        }
+    });
 }
 
 masterGame();
 var guessCounter = 0;
 
 function masterMind(guess, code) {
-  var length = code.length;
-  var correctPositionCounter = 0;
-  var correctLetterCounter = 0;
+    var length = code.length;
+    let correctPositionCounter = 0;
+    let correctLetterCounter = 0;
 
-  var codeArr = code.split("");
+    let codeArr = code.split("");
 
-  for (var i = 0; i < length; i++) {
-    if (code[i] == guess[i]) {
-      correctPositionCounter++;
+    for (let i = 0; i < length; i++) {
+        if (code[i] == guess[i]) {
+            correctPositionCounter++;
+        }
     }
-  }
-  console.log("correct letters in position: " + correctPositionCounter);
+    console.log("correct letters in position: " + correctPositionCounter);
 
-  for (var j = 0; j < length; j++) {
-    if (codeArr.indexOf(guess[j]) > -1) {
-      correctLetterCounter++;
-      codeArr[codeArr.indexOf(guess[j])] = " ";
+    for (let j = 0; j < length; j++) {
+        if (codeArr.indexOf(guess[j]) > -1) {
+            correctLetterCounter++;
+            codeArr[codeArr.indexOf(guess[j])] = " ";
+        }
     }
-  }
-  guessCounter++;
+    guessCounter++;
 
-  console.log("correct letters = " + correctLetterCounter);
-  console.log([correctPositionCounter, correctLetterCounter]);
-  console.log("guess: " + guessCounter);
+    console.log("correct letters = " + correctLetterCounter);
+    console.log([correctLetterCounter, correctPositionCounter]);
+    console.log("guess: " + guessCounter);
 
-  return correctPositionCounter;
+    return correctPositionCounter;
 }
