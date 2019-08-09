@@ -3,9 +3,13 @@
 //of correct characters in position, the user has 8 tries to guess the code
 
 const readline = require("readline");
+var randomArr = [];
+for (let i = 0; i < 8; i++) {
+    randomArr[i] = Math.floor(Math.random() * 10);
+}
 
 function masterGame() {
-    var code = "12341234";
+    var code = randomArr.join("");
 
     const rl = readline.createInterface({
         input: process.stdin,
