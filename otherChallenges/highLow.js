@@ -1,23 +1,30 @@
 const readline = require("readline");
 var check1 = false;
+var score = 0;
 
 var suits = ["clubs", "hearts", "spades", "diamonds"];
 
 var current = {
-  suit: suits[Math.floor(Math.random() * 4)],
-  value: Math.floor(Math.random() * 13) + 2
+  value: Math.floor(Math.random() * 13) + 2,
+  suit: suits[Math.floor(Math.random() * 4)]
 };
-
-console.log(current);
 
 function highLowGame() {
   if (check1 == true) {
     return 0;
   }
-  next = {
+
+  var next = {
     value: Math.floor(Math.random() * 13) + 2,
     suit: suits[Math.floor(Math.random() * 4)]
   };
+  if (next.value == current.value && next.suit == current.suit) {
+    console.log("duplicate");
+    next = {
+      value: Math.floor(Math.random() * 13) + 2,
+      suit: suits[Math.floor(Math.random() * 4)]
+    };
+  }
 
   console.log("\n\ncurrent card is: " + current.value + " of " + current.suit);
   const rl = readline.createInterface({
@@ -30,6 +37,8 @@ function highLowGame() {
 
     if (highLow(current, guess, next) == 1) {
       current = next;
+      score++;
+      console.log("score: " + score);
       highLowGame();
     } else if (highLow(current, guess, next) == 0) {
       return 0;
