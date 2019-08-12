@@ -10,10 +10,14 @@ function highLowGame() {
   rl.question("high or low? \n", guess => {
     console.log(`Guess: ${guess}`);
     rl.close();
-    highLow(curr, guess);
+    if (highLow(curr, guess) == 1) {
+      console.log("you win");
+      highLowGame();
+    } else if (highLow(curr, guess) == 0) {
+      console.log("you lose");
+      return 0;
+    }
   });
-
-  highLowGame();
 }
 
 function highLow(curr, guess) {
@@ -22,18 +26,17 @@ function highLow(curr, guess) {
 
   if (curr > next && guess == "low") {
     console.log("you win, low is right");
-  }
-  if (curr < next && guess == "high") {
+    return 1;
+  } else if (curr < next && guess == "high") {
     console.log("you win, high is right");
-  }
-  if (curr == next) {
+    return 1;
+  } else if (curr == next) {
     console.log("pass");
-  }
-  if (curr < next && guess == "low") {
+    return 1;
+  } else if (curr < next && guess == "low") {
     console.log("you lose, low is wrong");
     return 0;
-  }
-  if (curr > next && guess == "high") {
+  } else if (curr > next && guess == "high") {
     console.log("you lose, high is wrong");
     return 0;
   }
