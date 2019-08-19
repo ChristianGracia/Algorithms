@@ -43,17 +43,12 @@ function fiveRolls() {
 
 function dieHandler(answer) {
   var answerArray = answer.split("");
-
-  for (let i = 0; i < answerArray.length; i++) {
-    answerArray[i] = answerArray[i] - 1;
-  }
   console.log(answerArray);
 
-  for (let i = 0; i < 5; i++) {
-    if (answerArray.indexOf(i) > -1) {
-      rollArray[0] = singleRoll();
-      console.log(i + 1 + " rolled");
-    }
-  }
+  answerArray.forEach(item => {
+    rollArray[item - 1] = singleRoll();
+    console.log(item + " rolled");
+  });
+
   return rollArray;
 }
