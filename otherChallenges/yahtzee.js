@@ -7,7 +7,7 @@ function yahtzee() {
   rollCounter++;
 
   if (rollCounter == 4) {
-    console.log("done");
+    console.log("Final: " + rollArray);
     return 0;
   }
   const rl = readline.createInterface({
@@ -43,26 +43,17 @@ function fiveRolls() {
 
 function dieHandler(answer) {
   var answerArray = answer.split("");
-  if (answerArray.indexOf("1") > -1) {
-    rollArray[0] = singleRoll();
-    console.log("1 rolled");
-  }
-  if (answerArray.indexOf("2") > -1) {
-    rollArray[1] = singleRoll();
-    console.log("2 rolled");
-  }
-  if (answerArray.indexOf("3") > -1) {
-    rollArray[2] = singleRoll();
-    console.log("3 rolled");
-  }
-  if (answerArray.indexOf("4") > -1) {
-    rollArray[3] = singleRoll();
-    console.log("4 rolled");
-  }
-  if (answerArray.indexOf("5") > -1) {
-    rollArray[4] = singleRoll();
-    console.log("5 rolled");
-  }
 
+  for (let i = 0; i < answerArray.length; i++) {
+    answerArray[i] = answerArray[i] - 1;
+  }
+  console.log(answerArray);
+
+  for (let i = 0; i < 5; i++) {
+    if (answerArray.indexOf(i) > -1) {
+      rollArray[0] = singleRoll();
+      console.log(i + 1 + " rolled");
+    }
+  }
   return rollArray;
 }
