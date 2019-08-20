@@ -179,13 +179,14 @@ function triple(rollArray, counter) {
         var tripleResult = 0;
 
         if (checkA == 3) {
-          tripleResult = result[0] * 3;
+          tripleResult = parseInt(result[0]) * 3;
+
           console.log("triple! score: " + tripleResult);
           options[0] = " x";
           playAgain();
         }
         if (checkB == 3) {
-          tripleResult = result[1] * 3;
+          tripleResult = parseInt(result[1]) * 3;
           console.log("triple! score: " + tripleResult);
           options[0] = " x";
           playAgain();
@@ -301,7 +302,13 @@ function yahtzeeScore(rollArray, counter) {
 }
 
 function chance(counter) {
+  var counterCheck = 0;
+  if (counterCheck > 1) {
+    scorer(rollArray, counter);
+  }
   console.log("You chose chance! \nscore: " + counter);
   options[6] = " x";
+  counterCheck++;
+
   playAgain();
 }
