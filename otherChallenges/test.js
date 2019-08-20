@@ -1,33 +1,21 @@
-var suits = ["clubs", "hearts", "spades", "diamonds"];
-var current = {
-  value: Math.floor(Math.random() * 13) + 2,
-  suit: suits[Math.floor(Math.random() * 4)]
-};
-next = {
-  value: Math.floor(Math.random() * 13) + 2,
-  suit: suits[Math.floor(Math.random() * 4)]
-};
+var roll = ["4", "2", "3", "4", "5"];
+var roll1 = ["1", "2", "3", "4", "6"];
 
-function test() {
-  for (var i = 0; i < 100; i++) {
-    var current = {
-      value: Math.floor(Math.random() * 13) + 2,
-      suit: suits[Math.floor(Math.random() * 4)]
-    };
-    next = {
-      value: Math.floor(Math.random() * 13) + 2,
-      suit: suits[Math.floor(Math.random() * 4)]
-    };
-    if (next.value == current.value && next.suit == current.suit) {
-      console.log(next);
-      console.log(current);
-      console.log("duplicate");
-      next = {
-        value: Math.floor(Math.random() * 13) + 2,
-        suit: suits[Math.floor(Math.random() * 4)]
-      };
-      console.log("next is" + next.value + next.suit);
+function test(roll) {
+  const set1 = new Set(roll);
+
+  if (set1.size > 3) {
+    if (
+      (set1.has("1") && !set1.has("6")) ||
+      (!set1.has("1") && set1.has("6"))
+    ) {
+      console.log("right");
+    } else {
+      console.log("wrong");
     }
+  } else {
+    console.log("wrong");
   }
 }
-test();
+
+test(roll);

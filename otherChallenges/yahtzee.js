@@ -77,7 +77,7 @@ function scorer(rollArray, counter) {
     input: process.stdin,
     output: process.stdout
   });
-  rl.question(`Press option # (1-7) for score: \n${options}\n`, answer => {
+  rl.question(`Press option # (1-7) for score: \n\n${options}\n`, answer => {
     rl.close();
 
     switch (true) {
@@ -95,6 +95,21 @@ function scorer(rollArray, counter) {
       }
       case answer == "4": {
         console.log("answer =" + options[3]);
+
+        const set1 = new Set(rollArray);
+
+        if (set1.size > 3) {
+          if (
+            (set1.has("1") && !set1.has("6")) ||
+            (!set1.has("1") && set1.has("6"))
+          ) {
+            console.log("score: 30" + options[3]);
+            playAgain();
+          } else {
+            console.log("incorrect");
+            scorer(rollArray, counter);
+          }
+        }
         break;
       }
       case answer == "5": {
@@ -103,22 +118,33 @@ function scorer(rollArray, counter) {
         const set1 = new Set(rollArray);
 
         console.log(set1.size);
-        if (set1.size == 5) {
+        if (!(set1.has("1") && !set1.has("6")) && set1.size == 5) {
           console.log("yes");
           if (set1.has("1") && set1.has("6")) {
             console.log("incorrect");
+            scorer(rollArray, counter);
           } else {
-            console.log("score: 50" + options[4]);
+            console.log("score: 40" + options[4]);
           }
         } else {
-          console.log("incorrect");
+          console.log("incorrect choice\n");
+          scorer(rollArray, counter);
         }
         break;
       }
       case answer == "6": {
         console.log("answer =" + options[5]);
-        console.log("Yahtzee!!!!! score: 50");
-        playAgain();
+        const set1 = new Set(rollArray);
+        console.log(set1);
+
+        if (set1.size == 5) {
+          console.log("Yahtzee!!!!! score: 50");
+          playAgain();
+        } else {
+          console.log("\nincorrect choice");
+          scorer(rollArray, counter);
+        }
+
         break;
       }
       case answer == "7": {
@@ -130,6 +156,7 @@ function scorer(rollArray, counter) {
       }
       default:
         console.log("\nincorrect choice");
+        scorer(rollArray, counter);
     }
   });
 }
