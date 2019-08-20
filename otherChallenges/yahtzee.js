@@ -1,3 +1,7 @@
+//Yahtzee Game
+//went way further then I needed to
+//added scoring, fully functional. Program for checking if dice array contains a three of a kind needs a little work
+
 const readline = require("readline");
 
 var rollCounter = 0;
