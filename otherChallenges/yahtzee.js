@@ -8,7 +8,7 @@ function yahtzee() {
 
   if (rollCounter == 4) {
     console.log("Final: " + rollArray);
-    var counter = 0;
+    let counter = 0;
 
     for (let i = 0; i < 5; i++) {
       counter += rollArray[i];
@@ -83,75 +83,33 @@ function scorer(rollArray, counter) {
     switch (true) {
       case answer == "1": {
         console.log("answer =" + options[0]);
+        playAgain();
         break;
       }
       case answer == "2": {
-        console.log("answer =" + options[1]);
+        quad(rollArray, counter);
         break;
       }
       case answer == "3": {
-        console.log("answer =" + options[2]);
+        fullHouse(rollArray, counter);
         break;
       }
       case answer == "4": {
-        console.log("answer =" + options[3]);
+        straight(rollArray, counter);
 
-        const set1 = new Set(rollArray);
-
-        if (set1.size > 3) {
-          if (
-            (set1.has("1") && !set1.has("6")) ||
-            (!set1.has("1") && set1.has("6"))
-          ) {
-            console.log("score: 30" + options[3]);
-            playAgain();
-          } else {
-            console.log("incorrect");
-            scorer(rollArray, counter);
-          }
-        }
         break;
       }
       case answer == "5": {
-        console.log("answer =" + options[4]);
-
-        const set1 = new Set(rollArray);
-
-        console.log(set1.size);
-        if (!(set1.has("1") && !set1.has("6")) && set1.size == 5) {
-          console.log("yes");
-          if (set1.has("1") && set1.has("6")) {
-            console.log("incorrect");
-            scorer(rollArray, counter);
-          } else {
-            console.log("score: 40" + options[4]);
-          }
-        } else {
-          console.log("incorrect choice\n");
-          scorer(rollArray, counter);
-        }
+        largeStraight(rollArray, counter);
         break;
       }
       case answer == "6": {
-        console.log("answer =" + options[5]);
-        const set1 = new Set(rollArray);
-        console.log(set1);
-
-        if (set1.size == 5) {
-          console.log("Yahtzee!!!!! score: 50");
-          playAgain();
-        } else {
-          console.log("\nincorrect choice");
-          scorer(rollArray, counter);
-        }
+        yahtzeeScore(rollArray, counter);
 
         break;
       }
       case answer == "7": {
-        console.log("answer =" + options[6]);
-        console.log("score: " + counter);
-        playAgain();
-
+        chance(counter);
         break;
       }
       default:
@@ -162,6 +120,8 @@ function scorer(rollArray, counter) {
 }
 
 function playAgain() {
+  rollCounter = 0;
+  rollArray = fiveRolls();
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -173,7 +133,6 @@ function playAgain() {
     switch (true) {
       case answer == "yes": {
         yahtzee();
-        break;
       }
       case answer == "no": {
         console.log("goodbye");
@@ -183,4 +142,95 @@ function playAgain() {
         console.log("goodbye");
     }
   });
+}
+
+function triple() {}
+function fullHouse(rollArray, counter) {
+  const set1 = new Set(rollArray);
+
+  if (set1.size == 2) {
+    console.log("Full house!\nscore: 25");
+  } else {
+    console.log("incorrect choice");
+    scorer(rollArray, counter);
+  }
+}
+function quad(rollArray, counter) {
+  var object = {};
+  var result = [];
+
+  rollArray.forEach(function(item) {
+    if (!object[item]) {
+      object[item] = 0;
+    }
+    object[item] += 1;
+  });
+
+  for (var prop in object) {
+    if (object[prop] >= 2) {
+      result.push(prop);
+    }
+  }
+
+  const set1 = new Set(rollArray);
+
+  if (set1.size < 3) {
+    let quaded = result[0] * 4;
+    console.log("four of a kind!\nscore: " + quaded);
+  } else {
+    console.log("incorrect choice");
+    scorer(rollArray, counter);
+  }
+}
+
+function straight(rollArray, counter) {
+  const set1 = new Set(rollArray);
+
+  if (set1.size > 3) {
+    if (
+      (set1.has("1") && !set1.has("6")) ||
+      (!set1.has("1") && set1.has("6"))
+    ) {
+      console.log("Small straight!\nscore: 30");
+      playAgain();
+    } else {
+      console.log("incorrect choice");
+      scorer(rollArray, counter);
+    }
+  } else {
+    console.log("incorrect");
+    scorer(rollArray, counter);
+  }
+}
+function largeStraight(rollArray, counter) {
+  const set1 = new Set(rollArray);
+  if (!(set1.has("1") && !set1.has("6")) && set1.size == 5) {
+    console.log("yes");
+    if (set1.has("1") && set1.has("6")) {
+      console.log("incorrect");
+      scorer(rollArray, counter);
+    } else {
+      console.log("Large straight!\nscore: 40");
+    }
+  } else {
+    console.log("incorrect choice\n");
+    scorer(rollArray, counter);
+  }
+}
+
+function yahtzeeScore(rollArray, counter) {
+  const set1 = new Set(rollArray);
+
+  if (set1.size > 4) {
+    console.log("Yahtzee!!!!! score: 50");
+    playAgain();
+  } else {
+    console.log("\nincorrect choice");
+    scorer(rollArray, counter);
+  }
+}
+
+function chance(counter) {
+  console.log("You chose chance! \nscore: " + counter);
+  playAgain();
 }

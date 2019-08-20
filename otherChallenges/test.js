@@ -1,7 +1,7 @@
-var roll = ["4", "2", "3", "4", "5"];
+var roll = ["2", "2", "3", "1", "4"];
 var roll1 = ["1", "2", "3", "4", "6"];
 
-function test(roll) {
+function straight(roll) {
   const set1 = new Set(roll);
 
   if (set1.size > 3) {
@@ -9,13 +9,14 @@ function test(roll) {
       (set1.has("1") && !set1.has("6")) ||
       (!set1.has("1") && set1.has("6"))
     ) {
-      console.log("right");
+      console.log("Small straight!\nscore: 30");
     } else {
-      console.log("wrong");
+      console.log("incorrect choice");
     }
   } else {
-    console.log("wrong");
+    console.log("incorrect");
+    scorer(rollArray, counter);
   }
 }
 
-test(roll);
+straight(roll);
