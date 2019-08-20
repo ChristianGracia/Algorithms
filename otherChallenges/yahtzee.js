@@ -8,6 +8,13 @@ function yahtzee() {
 
   if (rollCounter == 4) {
     console.log("Final: " + rollArray);
+    var counter = 0;
+
+    for (let i = 0; i < 5; i++) {
+      counter += rollArray[i];
+    }
+    scorer(rollArray, counter);
+
     return 0;
   }
   const rl = readline.createInterface({
@@ -50,5 +57,9 @@ function dieHandler(answer) {
     console.log(item + " rolled");
   });
 
+  rollArray;
+
   return rollArray;
 }
+
+function scorer(counter, rollArray) {}
