@@ -165,11 +165,11 @@ function triple(rollArray, counter) {
   }
   const set1 = new Set(rollArray);
 
-  if (set1.size < 5) {
+  if (set1.size < 4) {
     if (result.length == 2) {
       for (let i = 0; i < 5; i++) {
-        var checkA = 0;
-        var checkB = 0;
+        let checkA = 0;
+        let checkB = 0;
         if (rollArray[i] == result[0]) {
           checkA++;
         }
@@ -177,7 +177,7 @@ function triple(rollArray, counter) {
           checkB++;
         }
       }
-      var tripleResult = 0;
+      let tripleResult = 0;
 
       if (checkA == 3) {
         tripleResult = parseInt(result[0]) * 3;
@@ -195,7 +195,7 @@ function triple(rollArray, counter) {
         scorer(rollArray, counter);
       }
     } else {
-      console.log("triple! score: " + result[0]);
+      console.log("triple! score: " + result[0] * 3);
       options[0] = " x";
       playAgain();
     }
