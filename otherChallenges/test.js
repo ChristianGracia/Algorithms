@@ -1,22 +1,23 @@
-var roll = ["2", "2", "3", "1", "4"];
+var roll = ["2", "2", "2", "1", "4"];
 var roll1 = ["1", "2", "3", "4", "6"];
 
 function straight(roll) {
-  const set1 = new Set(roll);
+  var object = {};
+  var result = [];
 
-  if (set1.size > 3) {
-    if (
-      (set1.has("1") && !set1.has("6")) ||
-      (!set1.has("1") && set1.has("6"))
-    ) {
-      console.log("Small straight!\nscore: 30");
-    } else {
-      console.log("incorrect choice");
+  roll.forEach(function(item) {
+    if (!object[item]) {
+      object[item] = 0;
     }
-  } else {
-    console.log("incorrect");
-    scorer(rollArray, counter);
+    object[item] += 1;
+  });
+
+  for (var prop in object) {
+    if (object[prop] >= 2) {
+      result.push(prop);
+    }
   }
+  console.log(parseInt(result[0]) * 3);
 }
 
 straight(roll);

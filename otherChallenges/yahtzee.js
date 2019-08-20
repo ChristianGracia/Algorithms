@@ -176,24 +176,23 @@ function triple(rollArray, counter) {
         if (rollArray[i] == result[1]) {
           checkB++;
         }
-        var tripleResult = 0;
+      }
+      var tripleResult = 0;
 
-        if (checkA == 3) {
-          tripleResult = parseInt(result[0]) * 3;
+      if (checkA == 3) {
+        tripleResult = parseInt(result[0]) * 3;
 
-          console.log("triple! score: " + tripleResult);
-          options[0] = " x";
-          playAgain();
-        }
-        if (checkB == 3) {
-          tripleResult = parseInt(result[1]) * 3;
-          console.log("triple! score: " + tripleResult);
-          options[0] = " x";
-          playAgain();
-        } else {
-          console.log("incorrect choice");
-          scorer(rollArray, counter);
-        }
+        console.log("triple! score: " + tripleResult);
+        options[0] = " x";
+        playAgain();
+      } else if (checkB == 3) {
+        tripleResult = parseInt(result[1]) * 3;
+        console.log("triple! score: " + tripleResult);
+        options[0] = " x";
+        playAgain();
+      } else {
+        console.log("incorrect choice");
+        scorer(rollArray, counter);
       }
     } else {
       console.log("triple! score: " + result[0]);
