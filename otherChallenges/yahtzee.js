@@ -82,8 +82,7 @@ function scorer(rollArray, counter) {
 
     switch (true) {
       case answer == "1": {
-        console.log("answer =" + options[0]);
-        playAgain();
+        triple(rollArray, counter);
         break;
       }
       case answer == "2": {
@@ -144,7 +143,60 @@ function playAgain() {
   });
 }
 
-function triple() {}
+function triple(rollArray, counter) {
+  var object = {};
+  var result = [];
+
+  rollArray.forEach(function(item) {
+    if (!object[item]) {
+      object[item] = 0;
+    }
+    object[item] += 1;
+  });
+
+  for (var prop in object) {
+    if (object[prop] >= 2) {
+      result.push(prop);
+    }
+  }
+  const set1 = new Set(rollArray);
+
+  if (set1.size < 5) {
+    if (result.length == 2) {
+      for (let i = 0; i < 5; i++) {
+        var checkA = 0;
+        var checkB = 0;
+        if (rollArray[i] == result[0]) {
+          checkA++;
+        }
+        if (rollArray[i] == result[1]) {
+          checkB++;
+        }
+        var tripleResult = 0;
+
+        if (checkA == 3) {
+          tripleResult = result[0] * 3;
+          console.log("triple! score: " + tripleResult);
+          playAgain();
+        }
+        if (checkB == 3) {
+          tripleResult = result[1] * 3;
+          console.log("triple! score: " + tripleResult);
+          playAgain();
+        } else {
+          console.log("incorrect choice");
+          scorer(rollArray, counter);
+        }
+      }
+    } else {
+      console.log("triple! score: " + result[0]);
+      playAgain();
+    }
+  } else {
+    console.log("incorrect choice!");
+    scorer(rollArray, counter);
+  }
+}
 function fullHouse(rollArray, counter) {
   const set1 = new Set(rollArray);
 
