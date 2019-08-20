@@ -62,17 +62,18 @@ function dieHandler(answer) {
   return rollArray;
 }
 
-function scorer(rollArray, counter) {
-  const options = [
-    " Three of a kind (1)",
-    " Four of a kind (2)",
-    " Full House (3)",
-    " Small Straight (4)",
-    " Large Straight (5)",
-    " Yahtzee (6)",
-    " Chance (7)"
-  ];
+const options = [
+  " Three of a kind (1)",
+  " Four of a kind (2)",
+  " Full House (3)",
+  " Small Straight (4)",
+  " Large Straight (5)",
+  " Yahtzee (6)",
+  " Chance (7)",
+  " pass (no options left)"
+];
 
+function scorer(rollArray, counter) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -110,6 +111,9 @@ function scorer(rollArray, counter) {
       case answer == "7": {
         chance(counter);
         break;
+      }
+      case answer == "pass": {
+        playAgain();
       }
       default:
         console.log("\nincorrect choice");
@@ -177,11 +181,13 @@ function triple(rollArray, counter) {
         if (checkA == 3) {
           tripleResult = result[0] * 3;
           console.log("triple! score: " + tripleResult);
+          options[0] = " x";
           playAgain();
         }
         if (checkB == 3) {
           tripleResult = result[1] * 3;
           console.log("triple! score: " + tripleResult);
+          options[0] = " x";
           playAgain();
         } else {
           console.log("incorrect choice");
@@ -190,6 +196,7 @@ function triple(rollArray, counter) {
       }
     } else {
       console.log("triple! score: " + result[0]);
+      options[0] = " x";
       playAgain();
     }
   } else {
@@ -202,6 +209,8 @@ function fullHouse(rollArray, counter) {
 
   if (set1.size == 2) {
     console.log("Full house!\nscore: 25");
+    options[2] = " x";
+    playAgain();
   } else {
     console.log("incorrect choice");
     scorer(rollArray, counter);
@@ -229,6 +238,8 @@ function quad(rollArray, counter) {
   if (set1.size < 3) {
     let quaded = result[0] * 4;
     console.log("four of a kind!\nscore: " + quaded);
+    options[1] = " x";
+    playAgain();
   } else {
     console.log("incorrect choice");
     scorer(rollArray, counter);
@@ -244,6 +255,7 @@ function straight(rollArray, counter) {
       (!set1.has("1") && set1.has("6"))
     ) {
       console.log("Small straight!\nscore: 30");
+      options[3] = " x";
       playAgain();
     } else {
       console.log("incorrect choice");
@@ -257,12 +269,12 @@ function straight(rollArray, counter) {
 function largeStraight(rollArray, counter) {
   const set1 = new Set(rollArray);
   if (!(set1.has("1") && !set1.has("6")) && set1.size == 5) {
-    console.log("yes");
     if (set1.has("1") && set1.has("6")) {
       console.log("incorrect");
       scorer(rollArray, counter);
     } else {
       console.log("Large straight!\nscore: 40");
+      options[4] = " x";
     }
   } else {
     console.log("incorrect choice\n");
@@ -271,10 +283,16 @@ function largeStraight(rollArray, counter) {
 }
 
 function yahtzeeScore(rollArray, counter) {
+  const yahtzeeCounter = 0;
   const set1 = new Set(rollArray);
 
   if (set1.size > 4) {
+    yahtzeeCounter++;
+
     console.log("Yahtzee!!!!! score: 50");
+    if (yahtzeeCounter > 2) {
+      options[5] = " x";
+    }
     playAgain();
   } else {
     console.log("\nincorrect choice");
@@ -284,5 +302,6 @@ function yahtzeeScore(rollArray, counter) {
 
 function chance(counter) {
   console.log("You chose chance! \nscore: " + counter);
+  options[6] = " x";
   playAgain();
 }
