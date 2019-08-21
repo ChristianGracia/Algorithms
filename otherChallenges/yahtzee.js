@@ -5,6 +5,8 @@
 //todo:
 //function for checking if dice array contains a three of a kind needs a little work
 
+//should have used readlineSync instead of readline, will change if I come back to this
+
 const readline = require("readline");
 
 var rollCounter = 0;
