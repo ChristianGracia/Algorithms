@@ -7,6 +7,7 @@ const deckRacer = {
         this.gameMap.push(obj);
       }
     }
+    // console.log(this.gameMap);
   },
   rollDice: function() {
     let roll = Math.floor(Math.random() * 8) + 1;
@@ -14,26 +15,30 @@ const deckRacer = {
   },
   shuffleCard: function() {
     this.gameMap.sort(() => Math.random() * 0.5);
-  },
-  checkDeck: function() {
-    for (var i = 0; i < 2; i++) {
-      if (this.gameMap[0] < 3) {
-        console.log("map[0] < 3");
-      }
-      if (this.gameMap[1] < 3) {
-        console.log("map[0] < 3");
-      }
+
+    if (this.gameMap[0] < 3 || this.gameMap[0] > 5) {
+      this.shuffleCard();
+      console.log("reshuffle");
     }
+    if (this.gameMap[1] < 3 || this.gameMap[1] > 5) {
+      this.shuffleCard();
+      console.log("reshuffle");
+    }
+    if (this.gameMap[26] < 3 || this.gameMap[26] > 5) {
+      this.shuffleCard();
+      console.log("reshuffle");
+    }
+    if (this.gameMap[27] < 3 || this.gameMap[27] > 5) {
+      this.shuffleCard();
+      console.log("reshuffle");
+    }
+    console.log(this.gameMap);
   }
 };
 deckRacer.createMap();
 deckRacer.shuffleCard();
-deckRacer.checkDeck();
 
 // console.log(deckRacer.rollDice());
 // console.log(deckRacer.gameMap);
 
-deckRacer.shuffleCard();
-
 // console.log(deckRacer.gameMap);
-console.log(deckRacer.checkDeck());
