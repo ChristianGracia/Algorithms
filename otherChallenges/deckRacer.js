@@ -1,3 +1,4 @@
+// needs to be completed
 const deckRacer = {
   gameMap: [],
   player1: -1,
@@ -16,31 +17,35 @@ const deckRacer = {
     return roll;
   },
   shuffleCard: function() {
-    this.gameMap.sort(() => Math.random() * 0.5);
-  },
-  shuffleCheck: function() {
-    let tmp = [];
-
-    for (var i = 0; i < 14; i++) {
-      if (tmp.length > 1) {
-        i = 14;
-      }
-
-      if (this.gameMap[i].card > 2 && this.gameMap[i].card < 6) {
-        tmp.push(this.gameMap[i]);
-      }
-    }
-
-    console.log(tmp);
-  },
-  movePlayer: function() {
-    let roll = this.rollDice();
-    console.log("dice roll is " + roll);
+    this.gameMap.sort(() => Math.random() * 0.6);
+    console.log(this.gameMap);
   }
+  // shuffleCheck: function() {
+  //   this.shuffleCard();
+  //   // let tmp = [];
+
+  //   // for (var i = 0; i < 14; i++) {
+  //   //   if (tmp.length > 1) {
+  //   //     i = 14;
+  //   //   }
+
+  //   //   if (this.gameMap[i].card > 2 && this.gameMap[i].card < 6) {
+  //   //     let val = this.gameMap.splice(i, 1);
+  //   //     tmp.push(val);
+  //   //   }
+  //   // }
+  //   // console.log(tmp);
+  // }
+  // movePlayer: function() {
+  //   let roll = this.rollDice();
+  //   console.log("dice roll is " + roll);
+  // }
 };
 deckRacer.createMap();
 deckRacer.shuffleCard();
-deckRacer.shuffleCheck();
+
+// deckRacer.shuffleCheck();
+
 // console.log(deckRacer.gameMap);
 
 // deckRacer.movePlayer();
