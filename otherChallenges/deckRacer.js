@@ -1,5 +1,8 @@
 const deckRacer = {
   gameMap: [],
+  player1: -1,
+  player2: -1,
+
   createMap: function() {
     for (let i = 1; i < 8; i++) {
       for (let j = 1; j < 5; j++) {
@@ -7,7 +10,6 @@ const deckRacer = {
         this.gameMap.push(obj);
       }
     }
-    // console.log(this.gameMap);
   },
   rollDice: function() {
     let roll = Math.floor(Math.random() * 8) + 1;
@@ -15,30 +17,33 @@ const deckRacer = {
   },
   shuffleCard: function() {
     this.gameMap.sort(() => Math.random() * 0.5);
+  },
+  shuffleCheck: function() {
+    let tmp = [];
 
-    if (this.gameMap[0] < 3 || this.gameMap[0] > 5) {
-      this.shuffleCard();
-      console.log("reshuffle");
+    for (var i = 0; i < 14; i++) {
+      if (tmp.length > 1) {
+        i = 14;
+      }
+
+      if (this.gameMap[i].card > 2 && this.gameMap[i].card < 6) {
+        tmp.push(this.gameMap[i]);
+      }
     }
-    if (this.gameMap[1] < 3 || this.gameMap[1] > 5) {
-      this.shuffleCard();
-      console.log("reshuffle");
-    }
-    if (this.gameMap[26] < 3 || this.gameMap[26] > 5) {
-      this.shuffleCard();
-      console.log("reshuffle");
-    }
-    if (this.gameMap[27] < 3 || this.gameMap[27] > 5) {
-      this.shuffleCard();
-      console.log("reshuffle");
-    }
-    console.log(this.gameMap);
+
+    console.log(tmp);
+  },
+  movePlayer: function() {
+    let roll = this.rollDice();
+    console.log("dice roll is " + roll);
   }
 };
 deckRacer.createMap();
 deckRacer.shuffleCard();
-
-// console.log(deckRacer.rollDice());
+deckRacer.shuffleCheck();
 // console.log(deckRacer.gameMap);
 
+// deckRacer.movePlayer();
+
+// console.log(deckRacer.rollDice());
 // console.log(deckRacer.gameMap);
