@@ -48,6 +48,7 @@ const game = {
 
     console.log(this.endArray);
   },
+
   shuffleTiles: function() {}
 };
 
@@ -56,3 +57,6 @@ game.middleTiles();
 game.endTiles();
 
 // game.rollDice();
+
+// first use both dice on one marker, get moving ready first based on die value,
+// come up with method that applys dice value to number, apply stop later
