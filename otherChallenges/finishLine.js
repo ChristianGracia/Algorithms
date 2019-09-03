@@ -37,7 +37,6 @@ const game = {
     for (let i = 0; i < 12; i++) {
       let tmp = new GameMap(i + 10, (i % 3) + 11, i % 4);
       this.middleArray.push(tmp);
-      console.log(tmp);
     }
   },
 
@@ -49,14 +48,29 @@ const game = {
   },
 
   shuffleTiles: function() {
-    this.endTiles.sort(() => Math.random() - 0.5);
-    console.log(this.endTiles);
+    this.endArray.sort(() => Math.random() - 0.5);
+    this.middleArray.sort(() => Math.random() - 0.5);
+  },
+  addTiles: function() {
+    var beginningTiles = this.endArray.splice(0, 3);
+    var endTiles = this.endArray.slice(0, 3);
+
+    this.cardArray.push(this.endArray.slice(0, -1));
+    this.cardArray.push(this.middleArray.slice(0, -1));
+
+    this.cardArray.sort(() => Math.random() - 0.5);
+
+    this.cardArray.push(beginningTiles);
+    this.cardArray.unshift(endTiles);
+
+    console.log(this.cardArray);
   }
 };
 
 game.middleTiles();
 game.endTiles();
 game.shuffleTiles();
+game.addTiles();
 
 // game.rollDice();
 
