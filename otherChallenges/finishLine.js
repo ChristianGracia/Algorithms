@@ -1,6 +1,6 @@
 const game = {
   cardArray: [],
-  diceArray: [0],
+  diceArray: [],
   endArray: [],
   middleArray: [],
 
@@ -19,7 +19,7 @@ const game = {
     console.log(this.diceArray);
   },
 
-  mapClass: (GameMap = function(tileNumber, card, suit) {
+  cardClass: (GameMap = function(tileNumber, card, suit) {
     this.tileNumber = tileNumber;
     this.card = card;
     this.suit = suit;
@@ -37,6 +37,7 @@ const game = {
     for (let i = 0; i < 12; i++) {
       let tmp = new GameMap(i + 10, (i % 3) + 11, i % 4);
       this.middleArray.push(tmp);
+      console.log(tmp);
     }
   },
 
@@ -45,18 +46,22 @@ const game = {
       let tmp = new GameMap(i + 22, 3 + (i % 8), i % 4);
       this.endArray.push(tmp);
     }
-
-    console.log(this.endArray);
   },
 
-  shuffleTiles: function() {}
+  shuffleTiles: function() {
+    this.endTiles.sort(() => Math.random() - 0.5);
+    console.log(this.endTiles);
+  }
 };
 
-// game.tileMap();
 game.middleTiles();
 game.endTiles();
+game.shuffleTiles();
 
 // game.rollDice();
 
 // first use both dice on one marker, get moving ready first based on die value,
 // come up with method that applys dice value to number, apply stop later
+
+//unfinished
+//console.clear()
