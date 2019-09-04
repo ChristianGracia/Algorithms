@@ -186,8 +186,10 @@ const game = {
   displayGame: function() {
     console.clear();
     var gameString = "";
+
     for (var i = 0; i < 53; i++) {
       //show peices current spot
+
       for (let j = 0; j < 4; j++) {
         if (player1Location[j] == i) {
           gameString += " ☕  " + (j + 1) + " ";
@@ -224,7 +226,7 @@ const game = {
       gameString += " ";
       gameString += this.cardArray[i].suit;
       gameString += "]";
-      if (i == 10 || i == 20 || i == 30 || i == 40 || i == 50)
+      if (i == 5 || i == 15 || i == 25 || i == 35 || i == 45)
         gameString += "\n\n";
     }
     console.log(gameString);
