@@ -34,7 +34,7 @@ const game = {
     }
     //jokers
     for (let i = 0; i < 2; i++) {
-      let tmp = new GameMap(i + 8, 0, "");
+      let tmp = new GameMap(i + 8, 0, 0);
       this.middleArray.push(tmp);
     }
     //jack queen kings
@@ -69,17 +69,27 @@ const game = {
     //add beginning and end tiles
     this.cardArray.unshift(...beginningTiles);
     this.cardArray.push(...endTiles);
-    console.log(this.cardArray.length);
-
-    console.log(this.cardArray);
-  }
+  },
   //display game board
+  displayGame: function() {
+    console.clear();
+    var gameString = "";
+    for (var i = 0; i < 53; i++) {
+      gameString += "    ";
+      gameString += JSON.parse(this.cardArray[i].card);
+      gameString += " ";
+      gameString += this.cardArray[i].suit;
+      if (i == 13 || i == 26 || i == 39) gameString += "\n";
+    }
+    console.log(gameString);
+  }
 };
 
 console.clear();
 game.middleTiles();
 game.endTiles();
 game.addTiles();
+game.displayGame();
 
 // game.rollDice();
 
