@@ -49,15 +49,20 @@ const game = {
         JSON.parse(this.diceArray.dice1) + JSON.parse(this.diceArray.dice2);
       //how many peices to move
       let peiceChoice = readlineSync.question(
-        "which peice do you want to move? 1, 2, or 3?"
+        "which peice do you want to move? 1, 2, or 3?\n"
       );
 
       //player 1 or 2 check
       if (turnCounter & 1) {
-        console.log("moving player one's " + peiceChoice + " ");
+        console.log(
+          "moving player one's (" + peiceChoice + ") " + total + " spaces\n"
+        );
+        player1Location[peiceChoice] += total;
+        console.log(player1Location);
+        this.displayGame();
       } else {
         console.log(
-          "moving player one's " + peiceChoice + " " + total + " spaces\n"
+          "moving player one's (" + peiceChoice + ") " + total + " spaces\n"
         );
       }
     }
@@ -123,9 +128,18 @@ const game = {
     console.clear();
     var gameString = "";
     for (var i = 0; i < 53; i++) {
-      if (i == 0) {
-        gameString += this.addpeices();
+      for (let j = 0; j < 3; j++) {
+        if (player1Location[j] == i) {
+          gameString += "x";
+        }
+        if (player2Location[j] == i) {
+          gameString += "o";
+        }
       }
+
+      // if (i == 0) {
+      //   gameString += this.addpeices();
+      // }
 
       gameString += "    ";
       gameString += JSON.parse(this.cardArray[i].card);
