@@ -1,3 +1,4 @@
+var pairCounter = 0;
 const twins = {
   intArray: [],
   indexArray: [],
@@ -12,24 +13,25 @@ const twins = {
     console.log("array length = " + this.intArray.length);
   },
   checkArray: function() {
-    let counter = 1000;
+    let counter = 10000;
 
     for (var i = 0; i < counter; i++) {
-      for (var j = 0; j < counter; j++) {
+      for (var j = 1; j < i + 1; j++) {
         if (this.intArray[i] + this.intArray[j] == 0) {
           console.log("pair found");
           console.log(this.intArray[i] + " " + this.intArray[j]);
-          console.log(
-            this.intArray.indexOf(this.intArray[i]) +
-              " " +
-              this.intArray.indexOf(this.intArray[j])
-          );
-          counter = 0;
+          //   console.log(
+          //     this.intArray.indexOf(this.intArray[i]) +
+          //       " " +
+          //       this.intArray.indexOf(this.intArray[j])
+          //   );
+          pairCounter++;
         }
       }
-      this.intArray.splice(i, 1);
+      this.intArray.splice(this.intArray.indexOf(this.intArray[i]), 1);
       counter--;
     }
+    console.log("total pairs = " + pairCounter);
   }
 };
 
