@@ -57,7 +57,7 @@ const game = {
         console.log(
           "moving player one's (" + peiceChoice + ") " + total + " spaces\n"
         );
-        player1Location[peiceChoice] += total;
+        player1Location[peiceChoice - 1] += total;
         console.clear();
 
         this.displayGame();
@@ -65,7 +65,7 @@ const game = {
         console.log(
           "moving player two's (" + peiceChoice + ") " + total + " spaces\n"
         );
-        player2Location[peiceChoice] += total;
+        player2Location[peiceChoice - 1] += total;
         console.clear();
         this.displayGame();
       }
@@ -132,7 +132,7 @@ const game = {
     console.clear();
     var gameString = "";
     for (var i = 0; i < 53; i++) {
-      for (let j = 0; j < 3; j++) {
+      for (let j = 0; j < 4; j++) {
         if (player1Location[j] == i) {
           gameString += " X ";
         }
@@ -155,7 +155,10 @@ const game = {
           gameString += "K";
           break;
         case 1:
-          gameString += "K";
+          gameString += "A";
+          break;
+        case 0:
+          gameString += "JOKER";
           break;
 
         default:
