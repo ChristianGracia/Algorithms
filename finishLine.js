@@ -190,10 +190,10 @@ const game = {
       //show peices current spot
       for (let j = 0; j < 4; j++) {
         if (player1Location[j] == i) {
-          gameString += " ☕ ";
+          gameString += " ☕  " + (j + 1) + " ";
         }
         if (player2Location[j] == i) {
-          gameString += " ☔ ";
+          gameString += " ☔ " + (j + 1) + " ";
         }
       }
 
