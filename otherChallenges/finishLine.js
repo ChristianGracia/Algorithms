@@ -1,3 +1,6 @@
+var readlineSync = require("readline-sync");
+var turnCounter = 0;
+
 const game = {
   cardArray: [],
   diceArray: [],
@@ -11,12 +14,24 @@ const game = {
   },
 
   diceClass: (DiceRoll = function(roll1, roll2) {
-    (this.dice1 = roll1), (this.dice2 = roll2);
+    this.dice1 = roll1;
+    this.dice2 = roll2;
   }),
 
   rollDice: function() {
     let val = new DiceRoll(this.roll(), this.roll());
-    this.diceArray[0] = val;
+    this.diceArray = val;
+    var playerMove = readlineSync.question(
+      "Player " +
+        ((turnCounter % 1) + 1) +
+        "        " +
+        "rolls = red: " +
+        JSON.parse(this.diceArray.dice1) +
+        ", black: " +
+        JSON.parse(this.diceArray.dice2) +
+        "\n" +
+        "Which peice(s) would you like to move?"
+    );
     console.log(this.diceArray);
   },
 
@@ -75,6 +90,10 @@ const game = {
     console.clear();
     var gameString = "";
     for (var i = 0; i < 53; i++) {
+      if (i == 0) {
+        gameString += this.addpeices();
+      }
+
       gameString += "    ";
       gameString += JSON.parse(this.cardArray[i].card);
       gameString += " ";
@@ -82,6 +101,11 @@ const game = {
       if (i == 13 || i == 26 || i == 39) gameString += "\n";
     }
     console.log(gameString);
+    this.rollDice();
+  },
+  addpeices: function() {
+    let peices = ["xxx", "ooo"];
+    return peices;
   }
 };
 
