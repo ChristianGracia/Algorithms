@@ -18,8 +18,8 @@ const twins = {
     for (var i = 0; i < counter; i++) {
       for (var j = 1; j < i + 1; j++) {
         if (this.intArray[i] + this.intArray[j] == 0) {
-          console.log("pair found");
-          console.log(this.intArray[i] + " " + this.intArray[j]);
+          //   console.log("pair found");
+          //   console.log(this.intArray[i] + " " + this.intArray[j]);
           //   console.log(
           //     this.intArray.indexOf(this.intArray[i]) +
           //       " " +
