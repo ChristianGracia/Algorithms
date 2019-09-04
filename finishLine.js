@@ -70,9 +70,64 @@ const game = {
         this.displayGame();
       }
     }
+
     // moving 2 peices
     else {
-      console.log("moving two peices\n");
+      //player 1
+      if (turnCounter & 1) {
+        var whichRedRoll = readlineSync.question(
+          "input dice to apply red die roll\n"
+        );
+        console.log(
+          "moving player one's (" +
+            whichRedRoll +
+            ") " +
+            JSON.parse(this.diceArray.dice1) +
+            " spaces\n"
+        );
+        player1Location[whichRedRoll - 1] += JSON.parse(this.diceArray.dice1);
+
+        var whichBlackRoll = readlineSync.question(
+          "input dice to apply black die roll\n"
+        );
+        console.log(
+          "moving player one's (" +
+            whichBlackRoll +
+            ") " +
+            JSON.parse(this.diceArray.dice1) +
+            " spaces\n"
+        );
+        player1Location[whichBlackRoll - 1] += JSON.parse(this.diceArray.dice2);
+        console.clear();
+        this.displayGame();
+      } else {
+        //player 2
+        var whichRedRoll = readlineSync.question(
+          "input dice to apply red die roll\n"
+        );
+        console.log(
+          "moving player two's (" +
+            whichRedRoll +
+            ") " +
+            JSON.parse(this.diceArray.dice2) +
+            " spaces\n"
+        );
+        player2Location[whichRedRoll - 1] += JSON.parse(this.diceArray.dice2);
+
+        var whichBlackRoll = readlineSync.question(
+          "input dice to apply black die roll\n"
+        );
+        console.log(
+          "moving player one's (" +
+            whichBlackRoll +
+            ") " +
+            JSON.parse(this.diceArray.dice2) +
+            " spaces\n"
+        );
+        player2Location[whichBlackRoll - 1] += JSON.parse(this.diceArray.dice2);
+        console.clear();
+        this.displayGame();
+      }
     }
     return moveQuestion;
   },
