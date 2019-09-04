@@ -31,7 +31,7 @@ const game = {
     do {
       moveQuestion = readlineSync.question(
         "\nPlayer " +
-          ((turnCounter % 1) + 1) +
+          ((turnCounter % 2) + 1) +
           "        " +
           "rolls = red: " +
           JSON.parse(this.diceArray.dice1) +
@@ -58,12 +58,16 @@ const game = {
           "moving player one's (" + peiceChoice + ") " + total + " spaces\n"
         );
         player1Location[peiceChoice] += total;
-        console.log(player1Location);
+        console.clear();
+
         this.displayGame();
       } else {
         console.log(
-          "moving player one's (" + peiceChoice + ") " + total + " spaces\n"
+          "moving player two's (" + peiceChoice + ") " + total + " spaces\n"
         );
+        player2Location[peiceChoice] += total;
+        console.clear();
+        this.displayGame();
       }
     }
     // moving 2 peices
@@ -130,29 +134,42 @@ const game = {
     for (var i = 0; i < 53; i++) {
       for (let j = 0; j < 3; j++) {
         if (player1Location[j] == i) {
-          gameString += "x";
+          gameString += " X ";
         }
         if (player2Location[j] == i) {
-          gameString += "o";
+          gameString += " O ";
         }
       }
 
-      // if (i == 0) {
-      //   gameString += this.addpeices();
-      // }
-
       gameString += "    ";
-      gameString += JSON.parse(this.cardArray[i].card);
+      gameString += "[";
+
+      switch (JSON.parse(this.cardArray[i].card)) {
+        case 11:
+          gameString += "J";
+          break;
+        case 12:
+          gameString += "Q";
+          break;
+        case 13:
+          gameString += "K";
+          break;
+        case 1:
+          gameString += "K";
+          break;
+
+        default:
+          gameString += JSON.parse(this.cardArray[i].card);
+      }
+
       gameString += " ";
       gameString += this.cardArray[i].suit;
-      if (i == 13 || i == 26 || i == 39) gameString += "\n";
+      gameString += "]";
+      if (i == 10 || i == 20 || i == 30 || i == 40 || i == 50)
+        gameString += "\n\n";
     }
     console.log(gameString);
     this.rollDice();
-  },
-  addpeices: function() {
-    let peices = ["xxx", "ooo"];
-    return peices;
   }
 };
 
