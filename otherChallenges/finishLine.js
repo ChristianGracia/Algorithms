@@ -3,6 +3,7 @@ const game = {
   diceArray: [],
   endArray: [],
   middleArray: [],
+  suitArray: ["♠", "♡", "♢", "♣"],
 
   roll: function() {
     let roll = Math.floor(Math.random() * 6) + 1;
@@ -28,24 +29,24 @@ const game = {
   middleTiles: function() {
     //ace and twos
     for (let i = 0; i < 8; i++) {
-      let tmp = new GameMap(i, ((i + 1) % 2) + 1, i % 4);
+      let tmp = new GameMap(i, ((i + 1) % 2) + 1, this.suitArray[i % 4]);
       this.middleArray.push(tmp);
     }
     //jokers
     for (let i = 0; i < 2; i++) {
-      let tmp = new GameMap(i + 8, 0, 0);
+      let tmp = new GameMap(i + 8, 0, "");
       this.middleArray.push(tmp);
     }
     //jack queen kings
     for (let i = 0; i < 12; i++) {
-      let tmp = new GameMap(i + 10, (i % 3) + 11, i % 4);
+      let tmp = new GameMap(i + 10, (i % 3) + 11, this.suitArray[i % 4]);
       this.middleArray.push(tmp);
     }
   },
 
   endTiles: function() {
     for (let i = 0; i < 32; i++) {
-      let tmp = new GameMap(i + 22, 3 + (i % 8), i % 4);
+      let tmp = new GameMap(i + 22, 3 + (i % 8), this.suitArray[i % 4]);
       this.endArray.push(tmp);
     }
   },
