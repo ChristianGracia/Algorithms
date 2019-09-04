@@ -9,20 +9,27 @@ const twins = {
     for (let i = 0; i < 10000; i++) {
       this.intArray.push(this.randomNumber());
     }
+    console.log("array length = " + this.intArray.length);
   },
   checkArray: function() {
-    this.intArray.forEach(e => {
-      if (e == 0) {
-        this.indexArray.push(this.intArray.indexOf(e));
-        this.intArray.splice(this.intArray.indexOf(e), 1);
+    let counter = 1000;
 
-        console.log(e);
-        if (this.indexArray.length == 2) {
-          return 0;
+    for (var i = 0; i < counter; i++) {
+      for (var j = 0; j < counter; j++) {
+        if (this.intArray[i] + this.intArray[j] == 0) {
+          console.log("pair found");
+          console.log(this.intArray[i] + " " + this.intArray[j]);
+          console.log(
+            this.intArray.indexOf(this.intArray[i]) +
+              " " +
+              this.intArray.indexOf(this.intArray[j])
+          );
+          counter = 0;
         }
       }
-    });
-    console.log(this.indexArray);
+      this.intArray.splice(i, 1);
+      counter--;
+    }
   }
 };
 
