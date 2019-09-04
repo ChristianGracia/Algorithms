@@ -59,12 +59,8 @@ const game = {
     let beginningTiles = this.endArray.splice(0, 3);
     let endTiles = this.endArray.splice(0, 3);
 
-    console.log(this.endArray.length);
-    console.log(this.middleArray.length);
-
     //push end tiles
-    this.cardArray = [this.cardArray, ...this.middleArray, ...this.endArray];
-    console.log(this.cardArray.length);
+    this.cardArray = [...this.middleArray, ...this.endArray];
 
     //randomize again
     this.cardArray.sort(() => Math.random() - 0.5);
@@ -73,9 +69,13 @@ const game = {
     this.cardArray.unshift(...beginningTiles);
     this.cardArray.push(...endTiles);
     console.log(this.cardArray.length);
+
+    console.log(this.cardArray);
   }
+  //display game board
 };
 
+console.clear();
 game.middleTiles();
 game.endTiles();
 game.addTiles();
