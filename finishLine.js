@@ -91,7 +91,7 @@ const game = {
     }
     //jokers
     for (let i = 0; i < 2; i++) {
-      let tmp = new GameMap(i + 8, 0, 0);
+      let tmp = new GameMap(i + 8, 0, "");
       this.middleArray.push(tmp);
     }
     //jack queen kings
@@ -132,6 +132,7 @@ const game = {
     console.clear();
     var gameString = "";
     for (var i = 0; i < 53; i++) {
+      //show peices current spot
       for (let j = 0; j < 4; j++) {
         if (player1Location[j] == i) {
           gameString += " X ";
@@ -158,7 +159,7 @@ const game = {
           gameString += "A";
           break;
         case 0:
-          gameString += "JOKER";
+          gameString += " JOKER";
           break;
 
         default:
@@ -181,10 +182,3 @@ game.middleTiles();
 game.endTiles();
 game.addTiles();
 game.displayGame();
-
-// game.rollDice();
-
-// first use both dice on one marker, get moving ready first based on die value,
-// come up with method that applys dice value to number, apply stop later
-
-//console.clear()
