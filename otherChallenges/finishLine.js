@@ -1,7 +1,7 @@
 var readlineSync = require("readline-sync");
 var turnCounter = 0;
-var player1Location = 0;
-var player2Location = 0;
+var player1Location = [0, 0, 0];
+var player2Location = [0, 0, 0];
 
 const game = {
   cardArray: [],
@@ -23,31 +23,48 @@ const game = {
   rollDice: function() {
     let val = new DiceRoll(this.roll(), this.roll());
     this.diceArray = val;
-    this.playerMove();
+    this.playerMove(this.diceArray);
   },
   playerMove: function() {
-    let moveQuestion;
+    var moveQuestion;
 
     do {
       moveQuestion = readlineSync.question(
-        "Player " +
+        "\nPlayer " +
           ((turnCounter % 1) + 1) +
           "        " +
           "rolls = red: " +
           JSON.parse(this.diceArray.dice1) +
           ", black: " +
           JSON.parse(this.diceArray.dice2) +
-          "\n" +
+          "\n\n" +
           "Would you like to move 1 or 2 peices?\n"
       );
     } while (moveQuestion > 2 || moveQuestion < 1);
+    turnCounter++;
 
     if (moveQuestion == 1) {
-      console.log("moving one peice\n");
-    } else {
+      //get total
+      let total =
+        JSON.parse(this.diceArray.dice1) + JSON.parse(this.diceArray.dice2);
+      //how many peices to move
+      let peiceChoice = readlineSync.question(
+        "which peice do you want to move? 1, 2, or 3?"
+      );
+
+      //player 1 or 2 check
+      if (turnCounter & 1) {
+        console.log("moving player one's " + peiceChoice + " ");
+      } else {
+        console.log(
+          "moving player one's " + peiceChoice + " " + total + " spaces\n"
+        );
+      }
+    }
+    // moving 2 peices
+    else {
       console.log("moving two peices\n");
     }
-
     return moveQuestion;
   },
 
