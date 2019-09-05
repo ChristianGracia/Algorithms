@@ -4,6 +4,7 @@ var interest = {
   interest: 0,
   years: 0,
   months: 0,
+  deposit: 0,
 
   askParams: function() {
     //get balance
@@ -39,11 +40,29 @@ var interest = {
   },
   interestPerYear: function() {
     for (var i = 0; i < this.years; i++) {
-      for (var i = 0; i < 12; i++) {
+      for (var j = 0; j < 12; j++) {
         this.findInterest();
       }
     }
-    console.log(this.months);
+    this.depositQuestion();
+
+    if (this.deposit > 0) {
+      var total = this.balance + this.deposit;
+    }
+    console.log(total);
+  },
+  depositQuestion: function() {
+    var question = readlineSync.question(
+      "Do you want to make a deposit? yes or no"
+    );
+
+    if (question == "yes") {
+      var depositTotal = readlineSync.question("How much?");
+
+      this.deposit = depositTotal;
+    } else {
+      this.deposit = 0;
+    }
   }
 };
 
