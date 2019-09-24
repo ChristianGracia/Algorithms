@@ -47,7 +47,9 @@ var interest = {
     this.depositQuestion();
 
     if (this.deposit > 0) {
-      var total = this.balance + this.deposit;
+      let total = this.balance + this.deposit;
+      console.log(this.balance);
+      console.log(this.deposit);
     }
     console.log(total);
   },
@@ -59,7 +61,7 @@ var interest = {
     if (question == "yes") {
       var depositTotal = readlineSync.question("How much?");
 
-      this.deposit = depositTotal;
+      this.deposit = parseInt(depositTotal);
     } else {
       this.deposit = 0;
     }
