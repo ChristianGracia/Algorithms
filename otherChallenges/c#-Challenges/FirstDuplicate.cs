@@ -1,3 +1,20 @@
+//top answer, passes all 23 checks
+
+int firstDuplicate(int[] a)
+{
+    int[] array = new int[a.Length];
+    
+    for(int i = 0; i < a.Length; i++)
+    {
+        if (array[a[i] -1] == 0)
+            array[a[i] -1] = 1;
+        else
+            return a[i];   
+    }  
+    return -1; 
+}
+
+
 int firstDuplicate(int[] a)
 {
     Hashtable hash = new Hashtable();
