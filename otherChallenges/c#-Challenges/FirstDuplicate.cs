@@ -51,7 +51,7 @@ int firstDuplicate(int[] a)
     return -1;
 }
 
-//also works
+//also works 21/23
 
 int firstDuplicate(int[] a)
 {
@@ -63,4 +63,22 @@ int firstDuplicate(int[] a)
         a[i] = -1 * a[i];
     }
     return -1;
+}
+
+//another 10/23
+int firstDuplicate(int[] a)
+{
+    int[] array = new int[a.Length];
+    
+    for(int i = 1; i < a.Length; i++)
+    {
+        if (array[i -1] != 0)
+            return a[i];
+        array[i -1]++;
+            
+    }
+    
+    
+    return -1;
+    
 }
