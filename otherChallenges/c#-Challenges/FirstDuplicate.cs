@@ -1,14 +1,17 @@
 int firstDuplicate(int[] a) {
-    int b = 0;
+    Hashtable hash = new Hashtable();
     
-    for(int i =0; i < a.Length; i++){
-        if (Array.IndexOf(a, a[i]) != Array.LastIndexOf(a, a[i]))
-            b = a[i];
-    }
-    
-    if (b > 0)
-        return b;
-    else
-        return -1;
 
+    for(int i = 0; i < a.Length; i++){
+        if (Array.IndexOf(a, a[i]) != Array.LastIndexOf(a, a[i]))
+        {
+            
+            
+       if (hash.Contains(a[i]))
+           return a[i];
+        }
+        hash.Add(a[i], Array.LastIndexOf(a, a[i]) - Array.IndexOf(a, a[i]) );
+    }
+    return -1;
+  
 }
