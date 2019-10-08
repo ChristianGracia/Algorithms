@@ -50,3 +50,17 @@ int firstDuplicate(int[] a)
     }
     return -1;
 }
+
+//also works
+
+int firstDuplicate(int[] a)
+{
+    for(int i = 0; i < a.Length; i++)
+    {
+        if (Array.IndexOf(a, -a[i]) > -1){
+            return a[i];
+        }
+        a[i] = -1 * a[i];
+    }
+    return -1;
+}
