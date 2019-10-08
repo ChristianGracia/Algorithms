@@ -30,3 +30,23 @@ int firstDuplicate(int[] a)
     }
     return -1;
 }
+
+//with list
+
+int firstDuplicate(int[] a)
+{
+    List<int> list = new List<int>();
+
+    for (int i = 0; i < a.Length; i++)
+    {
+        if (list.Contains(a[i]))
+            return a[i];
+        if (Array.IndexOf(a, a[i]) != Array.LastIndexOf(a, a[i]))
+        {
+
+            list.Add(a[i]);
+
+        }
+    }
+    return -1;
+}
