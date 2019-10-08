@@ -14,7 +14,6 @@ int firstDuplicate(int[] a)
     return -1; 
 }
 
-
 int firstDuplicate(int[] a)
 {
     Hashtable hash = new Hashtable();
