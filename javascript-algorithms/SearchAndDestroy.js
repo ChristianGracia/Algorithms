@@ -1,40 +1,12 @@
 function destroyer(arr) {
+    var removed = [];
 
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < arguments.length; j++) {
-            if (arr[i] == arguments[j]) {
-                arr.splice(i, 1);
-            }
-        }
-
+    for (var i = 1; i < arguments.length; i++) {
+        removed.push(arguments[i]);
     }
-    console.log(arr)
-    return arr;
-}
+    var fix = arr.filter(x => !removed.includes(x))
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-
-
-
-
-
-function destroyer(arr) {
-
-    var newArr = [];
-
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < arguments.length; j++) {
-            if (arr.indexOf(arguments[j]) < 0) {
-                newArr.push(arr[i]);
-            }
-        }
-
-
-    }
-
-
-    console.log(arr)
-    return arr;
+    return fix;
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
