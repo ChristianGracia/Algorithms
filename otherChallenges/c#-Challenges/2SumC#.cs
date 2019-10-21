@@ -9,15 +9,16 @@ public class Solution
             {
                 if (item + nums[i] == target)
                 {
-
+                    indexes[0] = Array.IndexOf(nums, item);
+                    indexes[1] = Array.IndexOf(nums, nums[i]);
                     return indexes;
+
+
                 }
 
             }
         }
         return indexes;
-
-
 
     }
 }
