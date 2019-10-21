@@ -1,8 +1,10 @@
-# Coding Challenge Repository
+# Algorithms
 
-This repo is for interview prep challenges and other exercises found on https://codesignal.com/.
+This repo contains algorithms and games I've written
 
 ## algorithms
+
+Algorithms found on codesignal.com, leetcode.com, etc
 
 ## Games
 
