@@ -4,10 +4,10 @@ function ObjectCompareAndReturn(collection, source) {
 
   collection.forEach(collectionItem => {
     var check = true;
-    for (var j = 0; j < sourceKeys.length; j++) {
+    for (var index = 0; index < sourceKeys.length; index++) {
       if (
-        !collectionItem.hasOwnProperty(sourceKeys[j]) ||
-        collectionItem[sourceKeys[j]] !== source[sourceKeys[j]]
+        !collectionItem.hasOwnProperty(sourceKeys[index]) ||
+        collectionItem[sourceKeys[index]] !== source[sourceKeys[index]]
       ) {
         check = false;
       }
