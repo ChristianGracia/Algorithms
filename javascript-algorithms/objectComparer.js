@@ -1,20 +1,19 @@
 function whatIsInAName(collection, source) {
   var arr = [];
+  var sourceKeys = Object.keys(source);
 
-  collection.forEach(x => {
+  collection.forEach(collectionItem => {
     var check = true;
-    for (var j = 0; j < Object.keys(source).length; j++) {
+    for (var j = 0; j < sourceKeys.length; j++) {
       if (
-        !x.hasOwnProperty(
-          Object.keys(source)[j] ||
-            x[Object.keys(source)[j]] !== source[Object.keys(source)[j]]
-        )
+        !collectionItem.hasOwnProperty(sourceKeys[j]) ||
+        collectionItem[sourceKeys[j]] !== source[sourceKeys[j]]
       ) {
         check = false;
       }
     }
     if (check) {
-      arr.push(x);
+      arr.push(collectionItem);
     }
   });
 
