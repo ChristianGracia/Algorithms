@@ -1,4 +1,4 @@
-function whatIsInAName(collection, source) {
+function ObjectCompareAndReturn(collection, source) {
   var arr = [];
   var sourceKeys = Object.keys(source);
 
@@ -17,16 +17,5 @@ function whatIsInAName(collection, source) {
     }
   });
 
-  console.log(arr);
-
   return arr;
 }
-
-whatIsInAName(
-  [
-    { first: "Romeo", last: "Montague" },
-    { first: "Mercutio", last: null },
-    { first: "Tybalt", last: "Capulet" }
-  ],
-  { last: "Capulet" }
-);
