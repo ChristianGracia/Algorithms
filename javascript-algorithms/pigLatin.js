@@ -27,6 +27,4 @@ function translatePigLatin(str) {
     return str;
 }
 
-translatePigLatin("consonant");
-
 //done in 18
