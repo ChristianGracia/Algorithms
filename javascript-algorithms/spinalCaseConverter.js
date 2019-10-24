@@ -1,12 +1,5 @@
 function spinalCase(str) {
-
-    var spinalTap = str.replace(/\s+|_+/g, "-")
-
-    for (var i = 1; i < spinalTap.length; i++) {
-        if (spinalTap[i] == spinalTap[i].toUpperCase()) {
-            console.log("found");
-        }
-    }
-    return spinalTap.toLowerCase();
+    return str.replace(/(.)([A-Z])/g, `$1 $2`).replace(/\s+|_+/g, "-").replace(/--/g, "-").toLowerCase();
 }
-spinalCase('whatIsUp');
+
+spinalCase('This Is Spinal Tap');
