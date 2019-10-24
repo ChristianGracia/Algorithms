@@ -8,6 +8,8 @@ function translatePigLatin(str) {
         case "u":
             str = str + "way";
             return str;
+        default:
+            break;
     }
 
     for (var i = 0; i < str.length; i++) {
@@ -27,4 +29,4 @@ function translatePigLatin(str) {
 
 translatePigLatin("consonant");
 
-//done in 18 mins
+//done in 18
