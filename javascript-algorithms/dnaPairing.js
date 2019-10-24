@@ -29,4 +29,6 @@ function pairElement(str) {
     return arr;
 }
 
-pairElement("GCG"); 
+pairElement("GCG");
+
+//done in 8 mins
