@@ -8,7 +8,6 @@ function translatePigLatin(str) {
         case "u":
             str = str + "way";
             return str;
-
     }
 
     for (var i = 0; i < str.length; i++) {
@@ -19,10 +18,11 @@ function translatePigLatin(str) {
         }
     }
 
-
+    if (str.search(/[aeiou]/g) < 0) {
+        return str + "ay";
+    }
+    str = str.substr(1) + str[0] + "ay";
     return str;
-
-
 }
 
 translatePigLatin("consonant");
