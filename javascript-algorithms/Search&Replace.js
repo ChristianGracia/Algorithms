@@ -1,8 +1,11 @@
 function myReplace(str, before, after) {
-    var startIndex = str.search(before);
-    var stringStart = str.slice(0, startIndex);
 
-    console.log(stringStart);
+    if (before[0] == before[0].toUpperCase()) {
+        after = after.slice(0, 1).toUpperCase() + after.substr(1);
+    }
+
+    str = str.replace(before, after);
+
     return str;
 }
 
