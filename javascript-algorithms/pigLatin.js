@@ -26,3 +26,5 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("consonant");
+
+//done in 18 mins
