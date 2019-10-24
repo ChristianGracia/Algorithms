@@ -1,0 +1,11 @@
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\bin\Debug\netcoreapp2.2\sortUniques.deps.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\bin\Debug\netcoreapp2.2\sortUniques.runtimeconfig.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\bin\Debug\netcoreapp2.2\sortUniques.runtimeconfig.dev.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\bin\Debug\netcoreapp2.2\sortUniques.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\bin\Debug\netcoreapp2.2\sortUniques.pdb
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.csprojAssemblyReference.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.AssemblyInfo.cs
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SortUniques\obj\Debug\netcoreapp2.2\sortUniques.pdb

@@ -1,0 +1,11 @@
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\bin\Debug\netcoreapp2.2\WordCounterCleanCode.deps.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\bin\Debug\netcoreapp2.2\WordCounterCleanCode.runtimeconfig.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\bin\Debug\netcoreapp2.2\WordCounterCleanCode.runtimeconfig.dev.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\bin\Debug\netcoreapp2.2\WordCounterCleanCode.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\bin\Debug\netcoreapp2.2\WordCounterCleanCode.pdb
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.csprojAssemblyReference.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.AssemblyInfo.cs
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\WordCounterCleanCode\WordCounterCleanCode\obj\Debug\netcoreapp2.2\WordCounterCleanCode.pdb
