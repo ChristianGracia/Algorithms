@@ -11,3 +11,5 @@ function fearNotLetter(str) {
 }
 
 fearNotLetter("abce");
+
+//done in 11 mins
