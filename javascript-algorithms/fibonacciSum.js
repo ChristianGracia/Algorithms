@@ -6,19 +6,12 @@ function sumFibs(num) {
 
     sum += 2;
 
-    var k = 1;
-    var l = 1;
+    var arr = [1, 1];
 
-    var count = 0
-
-    while (count > num) {
-        count = k + l;
-        sum += count;
-
+    for (var i = 1; i < num; i++) {
+        arr.push(arr[i - 1] + arr[i]);
     }
-
-
-
+    console.log(arr);
 
     return num;
 }
