@@ -1,23 +1,23 @@
 function sumPrimes(num) {
 
-    var arr = []
     var check = true;
     var sum = 0;
 
-    for (var i = 1; i < num; i++) {
-        for (var j = 2; j < i; j++) {
-            if (i % j === 0) {
+    for (var i = 1; i <= num; i++) {
+        check = true;
+        for (let j = 2, s = Math.sqrt(i); j <= s; j++) {
+            if (i % j == 0) {
                 check = false;
-                break;
             }
         }
         if (check) {
-            sum += num;
+            sum += i;
+
         }
     }
 
     console.log(sum);
-    return sum;
+    return sum - 1;
 }
 
 sumPrimes(10);
