@@ -20,4 +20,6 @@ function sumPrimes(num) {
     return sum - 1;
 }
 
+
+//21 mins
 sumPrimes(10);
