@@ -15,16 +15,14 @@ function sumFibs(num) {
         }
         arr.push(arr[i - 1] + arr[i]);
     }
-    console.log(arr);
 
     arr.forEach(x => {
-        if (x % 2 == 0) {
+        if (x % 2 !== 0) {
             sum += x;
         }
     })
 
-    console.log(sum);
     return sum;
 }
 
-sumFibs(10);
+sumFibs(4);
