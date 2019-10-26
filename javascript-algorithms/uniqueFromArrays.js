@@ -10,10 +10,15 @@ function uniteUnique(arr) {
         }
 
     }
-    console.log(set1);
+
+    console.log(set1.next.value)
+    var results = set1.values();
+    var returnArr = [];
 
 
-    return set1;
+
+    console.log(returnArr);
+    return returnArr;
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
