@@ -11,14 +11,15 @@ function uniteUnique(arr) {
 
     }
 
-    console.log(set1.next.value)
-    var results = set1.values();
-    var returnArr = [];
+
+    var results = [];
+
+    set1.forEach(x => results.push(x))
+    console.log(results)
 
 
 
-    console.log(returnArr);
-    return returnArr;
+    return results;
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
