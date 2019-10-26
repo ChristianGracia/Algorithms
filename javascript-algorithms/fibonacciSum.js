@@ -25,4 +25,6 @@ function sumFibs(num) {
     return sum;
 }
 
+//time 17 mins
+
 sumFibs(4);
