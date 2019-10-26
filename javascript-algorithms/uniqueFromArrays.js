@@ -11,15 +11,13 @@ function uniteUnique(arr) {
 
     }
 
-
     var results = [];
 
     set1.forEach(x => results.push(x))
-    console.log(results)
-
-
 
     return results;
 }
+
+//time 16 mins
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
