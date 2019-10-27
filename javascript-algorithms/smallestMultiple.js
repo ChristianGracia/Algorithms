@@ -24,4 +24,6 @@ function smallestCommons(arr) {
     }
 }
 
+// time 14 mins
+
 smallestCommons([1, 5]);
