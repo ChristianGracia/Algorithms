@@ -1,38 +1,27 @@
 function smallestCommons(arr) {
 
-  var tempArr = [];
+    var tempArr = [];
 
-
-  if(arr[0] > arr[1]){
-    let temp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = temp;
-  }
-  for (var i = arr[0]; i <= arr[1]; i++ ){
-    tempArr.push(i);
-
-  }
-
-  var counter = arr[1];
-
-  while(true){
-    counter++;
-    let check = true;
-
-    for (var j = 0; j < tempArr.length; j++){
-      if (counter % tempArr[j] != 0){
-        check = false;
-      }
-      if (check) {
-        console.log(counter);
-        return counter;
-      }
-      
+    if (arr[0] > arr[1]) {
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
     }
-  }
+    for (var i = arr[0]; i <= arr[1]; i++) {
+        tempArr.push(i);
+    }
 
-  return arr;
+    for (var j = arr[1]; ; j++) {
+        var check = true;
+        for (var k = 0; k < tempArr.length; k++) {
+            if (j % tempArr[k] > 0) {
+                check = false;
+            }
+        }
+        if (check) {
+            return j;
+        }
+    }
 }
 
-
-smallestCommons([1,5]);
+smallestCommons([1, 5]);
