@@ -3,13 +3,16 @@ function binaryAgent(str) {
     var arr = str.split(" ");
 
     arr.forEach(x => {
-        for (var i = 0; i < 8; i++) {
-            if (x[i]) {
-
+        for (var i = 7, k = 1; i => 0; i++) {
+            if (x[i] == 1) {
+                x[i] = 0;
+                x[i] += 2 * k;
             }
-
+            k++;
         }
     })
+
+    console.log(arr);
 
 
     return str;
