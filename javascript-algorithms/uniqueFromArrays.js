@@ -1,0 +1,23 @@
+function uniteUnique(arr) {
+    var set1 = new Set();
+
+    for (var i = 0; i < arguments.length; i++) {
+        for (var j = 0; j < arguments[i].length; j++) {
+            if (!set1.has(arguments[i][j])) {
+                set1.add(arguments[i][j]);
+            }
+
+        }
+
+    }
+
+    var results = [];
+
+    set1.forEach(x => results.push(x))
+
+    return results;
+}
+
+//time 16 mins
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

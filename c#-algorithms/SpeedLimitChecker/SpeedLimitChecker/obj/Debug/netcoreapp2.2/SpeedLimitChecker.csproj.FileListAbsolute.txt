@@ -1,0 +1,11 @@
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\bin\Debug\netcoreapp2.2\SpeedLimitChecker.deps.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\bin\Debug\netcoreapp2.2\SpeedLimitChecker.runtimeconfig.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\bin\Debug\netcoreapp2.2\SpeedLimitChecker.runtimeconfig.dev.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\bin\Debug\netcoreapp2.2\SpeedLimitChecker.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\bin\Debug\netcoreapp2.2\SpeedLimitChecker.pdb
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.csprojAssemblyReference.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.AssemblyInfo.cs
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\SpeedLimitChecker\SpeedLimitChecker\obj\Debug\netcoreapp2.2\SpeedLimitChecker.pdb

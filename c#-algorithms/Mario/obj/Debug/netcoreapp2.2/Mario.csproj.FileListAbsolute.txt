@@ -1,0 +1,11 @@
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\bin\Debug\netcoreapp2.2\Mario.deps.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\bin\Debug\netcoreapp2.2\Mario.runtimeconfig.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\bin\Debug\netcoreapp2.2\Mario.runtimeconfig.dev.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\bin\Debug\netcoreapp2.2\Mario.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\bin\Debug\netcoreapp2.2\Mario.pdb
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.csprojAssemblyReference.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.AssemblyInfo.cs
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Challenges\Mario\Mario\obj\Debug\netcoreapp2.2\Mario.pdb

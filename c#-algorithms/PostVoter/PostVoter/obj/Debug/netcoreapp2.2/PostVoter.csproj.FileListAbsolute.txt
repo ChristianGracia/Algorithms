@@ -1,0 +1,11 @@
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\bin\Debug\netcoreapp2.2\PostVoter.deps.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\bin\Debug\netcoreapp2.2\PostVoter.runtimeconfig.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\bin\Debug\netcoreapp2.2\PostVoter.runtimeconfig.dev.json
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\bin\Debug\netcoreapp2.2\PostVoter.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\bin\Debug\netcoreapp2.2\PostVoter.pdb
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.csprojAssemblyReference.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.csproj.CoreCompileInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.AssemblyInfoInputs.cache
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.AssemblyInfo.cs
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.dll
+C:\Users\chris\Documents\cSharp\C-Sharp\Algorithms\PostVoter\PostVoter\obj\Debug\netcoreapp2.2\PostVoter.pdb
