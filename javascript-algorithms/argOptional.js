@@ -6,15 +6,17 @@ function addTogether() {
     }
 
     if (arguments.length > 1) {
-
         return arguments[0] + arguments[1];
-
     }
     function sumTwoAnd(c) {
-        return c + number
+        if (!Array.isArray(c)) {
+            return c + number
+        }
+        return undefined;
     }
     return sumTwoAnd;
 }
 
 addTogether(2, 3);
 
+//time 11 mins
