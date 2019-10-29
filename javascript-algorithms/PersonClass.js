@@ -13,15 +13,20 @@ var Person = function (firstAndLast) {
     };
     this.setLastName = (last) => {
         lastName = last;
-        fullName = firstName + lastName;
+        fullName = firstName + last;
     }
 
-    this.setFullName = x => fullName = x;
+    this.setFullName = x => {
+        fullName = x
+        firstName = x.split(" ")[0];
+        lastName = x.split(" ")[1];
+    }
     this.getFullName = () => {
+        fullName = firstName + " " + lastName;
         return fullName;
     }
 };
 
 var bob = new Person('Bob Ross');
-bob.setFullName("Haskell Curry")
-bob.getFullName();
+
+//done in 18 mins
