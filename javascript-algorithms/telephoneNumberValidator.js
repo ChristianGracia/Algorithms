@@ -26,5 +26,5 @@ function telephoneCheck(str) {
         return true;
     }
 }
-
+//time 28 mins
 telephoneCheck("555-555-5555");
