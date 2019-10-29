@@ -2,14 +2,14 @@ function rot13(str) {
     var arr = [];
     for (var i = 0; i < str.length; i++) {
         let letter = str[i].charCodeAt();
-        var str1 = " ";
+        console.log(letter)
 
         if (letter > 96 && letter < 123) {
             letter = ((letter - 96 + 13) % 26) + 96;
             arr.push(String.fromCharCode(letter));
         }
-        if (letter > 64 && letter < 90) {
-            letter = ((letter - 65 + 13) % 26) + 65;
+        if (letter > 64 && letter < 91) {
+            letter = (((letter - 65) + 13) % 26) + 65;
             arr.push(String.fromCharCode(letter));
         }
         else {
@@ -20,4 +20,5 @@ function rot13(str) {
 }
 
 rot13("SERR PBQR PNZC");
+
 
