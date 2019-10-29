@@ -1,8 +1,7 @@
 function addTogether() {
-    console.log(arguments[1]);
     var number = arguments[0];
 
-    if (typeof arguments[1] != "number") {
+    if (arguments.length == 2 && typeof arguments[1] != "number" || typeof arguments[0] == "string") {
         return undefined;
     }
 
@@ -15,7 +14,7 @@ function addTogether() {
         return c + number
     }
     return sumTwoAnd;
-
 }
 
 addTogether(2, 3);
+
