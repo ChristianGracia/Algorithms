@@ -5,22 +5,20 @@ String[] addBorder(String[] picture) {
     String[] array = new String[rowsLength];
     
    
-            String stars = "";
-            for (int j = 0; j < charLength; j++){
-                stars += "*";
-            }
-            array[0] = stars;
-            array[picture.length + 1] = stars;
+        String stars = "";
+        for (int j = 0; j < charLength + 2; j++){
+            stars += "*";
+        }
+        array[0] = stars;
+        array[rowsLength -1] = stars;
         
     
-    for(int i = 0; i < picture.length - 1; i++)
+    for(int i = 0; i < rowsLength -2; i++)
     {
-        System.out.println(picture[i]);
         String temp = "*";
         temp += picture[i];
         temp += "*";
-            array[i] = temp;
-        
+        array[i+ 1] = temp;
     }
     return array;
 
