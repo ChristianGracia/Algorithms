@@ -19,28 +19,10 @@ boolean areSimilar(int[] a, int[] b) {
                     if(a[j] != b[j]){
                         int swapSecond = a[j];
                         int[] c = a;
-                   
-                        // System.out.println(c[j]);
-                        //          System.out.println(c[i]);
-                        
-                             for(int item : c){
-                            System.out.println(item);
-                        }
                  
                         c[i] = swapSecond;
                         c[j] = swapFirst;
-                        
-                                        System.out.println("\n");
-//                           System.out.println(c[j]);
-//                                  System.out.println(c[i]);
-                        
-                                
-                        for(int item : c){
-                            System.out.println(item);
-                        }
-                        
-                    
-                        
+
                         if (Arrays.equals(c, b)){
                              return true;
                          }
