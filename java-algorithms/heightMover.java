@@ -1,37 +1,28 @@
 int[] sortByHeight(int[] a) {
-    
-    while(true){
-    for(int i = 0; i < a.length; i++){
-        
-    }
-        
-        Boolean check = true;
-    for(int j = 0; j < a.length -1; j++){
-        if (a[j] < a[j + 1]){
-            check = false;
-        }
-    }  
-        
-        if(check){
-            break;
-        }
-    }
-    return a;
+ int intArray[] = new int[a.length];
+ int unSortedArray[] = new int[a.length];
+ int counter = 0;
+ for (int i = 0; i < a.length; i++) {
+  if (a[i] == -1) {
+   intArray[i] = a[i];
+  } else {
+   intArray[i] = 0;
+   counter++;
+   unSortedArray[counter - 1] = a[i];
+  }
+
+ }
+ for (int l = 0; l < counter - 1; l++)
+  for (int j = 0; j < counter - l - 1; j++)
+   if (unSortedArray[j] > unSortedArray[j + 1]) {
+    int temp = 0;
+    temp = unSortedArray[j];
+    unSortedArray[j] = unSortedArray[j + 1];
+    unSortedArray[j + 1] = temp;
+
+   }
 
 
-}
-
-int[] sortByHeight(int[] a) {
-    int intArray[] = new int[a.length];
-    for(int i = 0; i < a.length;i++){
-        if(intArray[i] == -1){
-                 intArray[i] = a[i];
-        }
-        else {
-            intArray[i] = 0;
-        }
-   
-    }
-    return intArray;
+ return unSortedArray;
 
 }
