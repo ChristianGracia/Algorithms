@@ -20,3 +20,18 @@ int[] sortByHeight(int[] a) {
 
 
 }
+
+int[] sortByHeight(int[] a) {
+    int intArray[] = new int[a.length];
+    for(int i = 0; i < a.length;i++){
+        if(intArray[i] == -1){
+                 intArray[i] = a[i];
+        }
+        else {
+            intArray[i] = 0;
+        }
+   
+    }
+    return intArray;
+
+}
