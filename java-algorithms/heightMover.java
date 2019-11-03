@@ -21,8 +21,17 @@ int[] sortByHeight(int[] a) {
     unSortedArray[j + 1] = temp;
 
    }
+    int m = 0;
+    
+    for(int h = 0; h < a.length; h++){
+        if (a[h] != -1)
+        {
+            a[h] = unSortedArray[m];
+            m++;
+        }
+    }
 
 
- return unSortedArray;
+ return a;
 
 }
