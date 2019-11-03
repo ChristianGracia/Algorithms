@@ -5,7 +5,7 @@ int[] sortByHeight(int[] a) {
         
     }
         
-        let check = true;
+        Boolean check = true;
     for(int j = 0; j < a.length -1; j++){
         if (a[j] < a[j + 1]){
             check = false;
@@ -13,7 +13,7 @@ int[] sortByHeight(int[] a) {
     }  
         
         if(check){
-            return true;
+            break;
         }
     }
     return a;
