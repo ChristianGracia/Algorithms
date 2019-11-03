@@ -8,12 +8,10 @@ boolean palindromeRearranging(String inputString) {
         
        if(num >= 0 && num < 123){
            array[num]++;
-            
          }
         
     }
     
-    Boolean check = true;
     int counter = 0;
     
     for(int item : array){
@@ -25,11 +23,7 @@ boolean palindromeRearranging(String inputString) {
         if(counter > 1){
             return false;
         }
-        
-      
-        
+          
     }
-    
-  
-    return check;
+    return true;
 }
