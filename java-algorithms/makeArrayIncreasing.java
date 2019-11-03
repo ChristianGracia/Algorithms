@@ -5,15 +5,9 @@ int arrayChange(int[] inputArray) {
     for(int i = 1; i < inputArray.length; i++){
             while(a[i] <= a[i -1]){
                 counter++;
-                a[i] = a[i] +1;
+                a[i]++;
                 
             }
-    
-        
     }
-       for(int item : a){
-            System.out.println(item);
-        }
     return counter;
-
 }
