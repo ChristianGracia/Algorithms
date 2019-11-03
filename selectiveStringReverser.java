@@ -5,16 +5,23 @@ String reverseInParentheses(String inputString) {
     for(int i = 0; i < inputString.length(); i++){
         if (inputString.charAt(i) == '('){
             int counter = i;
-            while(inputString.charAt(i) != ')'){
+            while(inputString.charAt(counter) != ')'){
                 counter++;
+                if (inputString.charAt(counter) == '(')){
+                    
+                }
             }
-            for(int j = i; j < counter; j++ ){
-                inputString.charAt(j) = inputString.charAt(counter);
-                counter--;
+            for(int j = counter - 1; j > i; j-- ){
+                returnString += Character.toString(inputString.charAt(j));
+                
             }
+            i = counter;
+        }
+        else {
+            returnString += Character.toString(inputString.charAt(i));
         }
     }
 
-    return inputString;
+    return returnString;
 
 }
