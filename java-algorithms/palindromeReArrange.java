@@ -6,7 +6,7 @@ boolean palindromeRearranging(String inputString) {
     {
         int num = (int)Character.toLowerCase(inputString.charAt(i)) - 97;
         
-       if(num >= 0 && num < 123){
+       if(num >= 0 && num < 26){
            array[num]++;
          }
         
@@ -27,3 +27,4 @@ boolean palindromeRearranging(String inputString) {
     }
     return true;
 }
+
