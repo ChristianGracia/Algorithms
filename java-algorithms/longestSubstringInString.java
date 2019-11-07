@@ -3,29 +3,37 @@ class Solution {
         
         int num = 0;
         int counter = 0;
-        int[] arr = new int[26];
+        int[] arr = new int[27];
     
         for(int i = 0; i < s.length(); i++){
             
             int charToNum = (int)Character.toLowerCase(s.charAt(i)) - 97;
+            if(s.charAt(i) == ' '){
+                charToNum = 26;
+                
+            }
             
-            arr[charToNum]++;
-            
-            if(arr[charToNum] == 1){
+        
+            if((charToNum > -1 && charToNum < 27 ) && arr[charToNum] == 0){
+                
+                    arr[charToNum]++;
+    
                 counter++;
                 if(counter > num ){
                 num = counter;
                }
             }
             else {
-                counter = 0;
+                counter = 1;
                 for(int item : arr){
                     item = 0;
                 }
+                if(charToNum > -1 && charToNum < 27){
+                         arr[charToNum]++;
+                }
+         
             }
-            
-           
-              
+  
             
         }
              return num;
