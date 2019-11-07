@@ -5,7 +5,8 @@ class Solution {
         int counter = 0;
         int[] arr = new int[27];
     
-        for(int i = 0; i < s.length(); i++){
+      
+        for(int i = counter; i < s.length(); i++){
             
             int charToNum = (int)Character.toLowerCase(s.charAt(i)) - 97;
             if(s.charAt(i) == ' '){
@@ -24,6 +25,7 @@ class Solution {
                }
             }
             else {
+                i = s.indexOf(s.charAt(i)) + 1;
                 counter = 1;
                 for(int item : arr){
                     item = 0;
@@ -35,8 +37,10 @@ class Solution {
             }
   
             
+        
         }
              return num;
-        
     }
+        
+    
 }
