@@ -1,13 +1,8 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         
-        int num = 1;
+        int num = (s.length() == 0) ? 0 : 1;
         int counter = 0;
-        
-        if(s.length() == 0) {
-            return 0;
-        }
-        
      
         while(counter < s.length()){
             int counter2 = 1;
