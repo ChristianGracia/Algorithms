@@ -44,3 +44,34 @@ class Solution {
         
     
 }
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        
+        int num = 0;
+        int counter = 0;
+        int counter2 = 0;
+        while(counter < s.length()){
+            String testString = "";
+            for(int i = counter; i < s.length(); i++){
+                testString += s.charAt(i);
+                
+                if(testString.indexOf(s.charAt(i)) == testString.lastIndexOf(s.charAt(i))){
+                    counter2++;
+                    if(num < counter2){
+                        num = counter2;
+                    }
+                }
+                else {
+                    counter2 = 0;
+                    i = s.length();
+                }
+            
+                
+            }
+            counter++;
+        }
+        return num;
+        
+    }
+}
