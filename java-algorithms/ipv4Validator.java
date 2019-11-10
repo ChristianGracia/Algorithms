@@ -10,11 +10,11 @@ boolean isIPv4Address(String inputString) {
         
         String number = stringSplit[i];
     
-         int num = Integer.parseInt(number);
+         int num = Integer.valueOf(stringSplit[i]);
          System.out.println(num);
-//         if (num < 0 || num > 255){
-//             return false;
-//         }
+        if (num < 0 || num > 255){
+            return false;
+        }
     }
     return true;
     
