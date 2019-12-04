@@ -39,14 +39,12 @@ class Solution {
                 sum2 += Math.pow(10, counter4 -1) * i;
              counter4--;
         }
-        
-        System.out.println(sum1);
-                System.out.println(sum2);
+
         int doubleSum = sum1 + sum2;
-        System.out.println(doubleSum);
+ 
 
             ArrayList<Integer> finalNums = new ArrayList<Integer>();
-        while(doubleSum > 10){
+        while(doubleSum > 9){
             finalNums.add(doubleSum % 10);
             doubleSum = doubleSum / 10;
         }
@@ -55,7 +53,7 @@ class Solution {
 
 
            ListNode list = new ListNode(finalNums.get(0));
-        int size = finalNums.size();
+        int size = finalNums.size() - 1;
   
      
             int counter2 = 1;
