@@ -1,72 +1,69 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
+
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ArrayList<Integer> num1 = new ArrayList<Integer>();
     ArrayList<Integer> num2 = new ArrayList<Integer>();
         
+        int counter3 = 1;
+        int counter4 = 1;
+        
         while(l1.next != null){
             num1.add(l1.val);
                 l1 = l1.next;
-        
-                
+            counter3++;
+    
         }
         
                while(l2.next != null){
             num2.add(l2.val);
                 l2 = l2.next;
-        
-                
+                   counter4++;
+     
         }
         
         num1.add(l1.val);
          num2.add(l2.val);
         Collections.reverse(num1);
-            Collections.reverse(num2);
+        Collections.reverse(num2);
+        int sum1 = 0;
+        int sum2 = 0;
         
-        String num1String = "";
-        String num2String = "";
+
         
         for (Integer i : num1){
-            num1String += Integer.toString(i);
+            sum1 += Math.pow(10, counter3 -1) * i;
+            counter3--;
             
         }
          for (Integer i : num2){
-                num2String += Integer.toString(i);
-        }
-
-        int sum = Integer.parseInt(num1String) + Integer.parseInt(num2String);
-        System.out.println(sum);
-        String stringSum = Integer.toString(sum);
-        
-        int[] arr = new int[stringSum.length()];
-        
-        int counter = 0;
-        int size = stringSum.length() - 1;
-        
-        for(int i = size; i > -1; i--){
-       
-            arr[counter++] += Character.getNumericValue(stringSum.charAt(i));
-        
+                sum2 += Math.pow(10, counter4 -1) * i;
+             counter4--;
         }
         
-        int counter2 = 1;
+        System.out.println(sum1);
+                System.out.println(sum2);
+        int doubleSum = sum1 + sum2;
+        System.out.println(doubleSum);
+
+            ArrayList<Integer> finalNums = new ArrayList<Integer>();
+        while(doubleSum > 10){
+            finalNums.add(doubleSum % 10);
+            doubleSum = doubleSum / 10;
+        }
+        finalNums.add(doubleSum);
+        
 
 
-           ListNode list = new ListNode(arr[0]);
+           ListNode list = new ListNode(finalNums.get(0));
+        int size = finalNums.size();
   
-        if (size > 0) {
-
+     
+            int counter2 = 1;
            ListNode last = list;
            while(size > 0 ){
+           
                
-           ListNode tmp = new ListNode(arr[counter2]);
+           ListNode tmp = new ListNode(finalNums.get(counter2));
            last.next = tmp;
            last = last.next;
          
@@ -74,8 +71,8 @@ class Solution {
                counter2++;
            }
                return list;
-        }
-        return list;
+
+
     }
 
 }
