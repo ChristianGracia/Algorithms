@@ -1,45 +1,45 @@
 class Solution {
  public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-  ArrayList < Integer > num1 = new ArrayList < Integer > ();
-  ArrayList < Integer > num2 = new ArrayList < Integer > ();
+  ArrayList < Integer > listL1 = new ArrayList < Integer > ();
+  ArrayList < Integer > listL2 = new ArrayList < Integer > ();
 
-  int counter3 = 1;
-  int counter4 = 1;
+  int l1Counter = 1;
+  int l2Counter = 1;
 
   while (l1.next != null) {
-   num1.add(l1.val);
+   listL1.add(l1.val);
    l1 = l1.next;
-   counter3++;
+   l1Counter++;
 
   }
 
   while (l2.next != null) {
-   num2.add(l2.val);
+   listL2.add(l2.val);
    l2 = l2.next;
-   counter4++;
+   l2Counter++;
 
   }
 
-  num1.add(l1.val);
-  num2.add(l2.val);
-  Collections.reverse(num1);
-  Collections.reverse(num2);
-  int sum1 = 0;
-  int sum2 = 0;
+  listL1.add(l1.val);
+  listL2.add(l2.val);
+  Collections.reverse(listL1);
+  Collections.reverse(listL2);
+  int linkedNumber1 = 0;
+  int linkedNumber2 = 0;
 
 
 
-  for (Integer i: num1) {
-   sum1 += Math.pow(10, counter3 - 1) * i;
-   counter3--;
+  for (Integer i: listL1) {
+ linkedNumber1 += Math.pow(10, l1Counter - 1) * i;
+   l1Counter--;
 
   }
-  for (Integer i: num2) {
-   sum2 += Math.pow(10, counter4 - 1) * i;
-   counter4--;
+  for (Integer i: listL2) {
+   linkedNumber2 += Math.pow(10, l2Counter - 1) * i;
+   l2Counter--;
   }
 
-  int doubleSum = sum1 + sum2;
+  int doubleSum = linkedNumber1 + linkedNumber2;
 
 
   ArrayList < Integer > finalNums = new ArrayList < Integer > ();
