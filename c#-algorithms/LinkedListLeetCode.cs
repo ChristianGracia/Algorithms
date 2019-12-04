@@ -26,15 +26,42 @@ class Solution {
         }
         
         num1.add(l1.val);
-         num2.add(l1.val);
+         num2.add(l2.val);
         Collections.reverse(num1);
             Collections.reverse(num2);
         
-        int sum = Integer.parseInt(num1) + Integer.parseInt(num2);
+        String num1String = "";
+        String num2String = "";
+        
+        for (Integer i : num1){
+            num1String += Integer.toString(i);
+            
+        }
+         for (Integer i : num2){
+                num2String += Integer.toString(i);
+        }
+        System.out.println(num1String);
+           System.out.println(num2String);
+        
+        int sum = Integer.parseInt(num1String) + Integer.parseInt(num2String);
         System.out.println(sum);
+        String stringSum = Integer.toString(sum);
+        
+        // Integer.parseInt(sumString.charAt(0)));
+        ListNode list = new ListNode(Character.getNumericValue(stringSum.charAt(2)));
+           ListNode list1 = new ListNode(Character.getNumericValue(stringSum.charAt(1)));
+           ListNode list2 = new ListNode(Character.getNumericValue(stringSum.charAt(0)));
+            
+            list.next = list1;
+        list1.next = list2;
+        // list.val = Integer.parseInt(sumString.charAt(2));
+        // list.next.val = Integer.parseInt(sumString.charAt(1));
+        // list.next.next.val = Integer.parseInt(sumString.charAt(0));
+        
+        
 
 
-        return l1;
+        return list;
         
         
     }
