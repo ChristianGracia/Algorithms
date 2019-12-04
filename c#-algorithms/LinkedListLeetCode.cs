@@ -40,29 +40,42 @@ class Solution {
          for (Integer i : num2){
                 num2String += Integer.toString(i);
         }
-        System.out.println(num1String);
-           System.out.println(num2String);
-        
+
         int sum = Integer.parseInt(num1String) + Integer.parseInt(num2String);
         System.out.println(sum);
         String stringSum = Integer.toString(sum);
         
-        // Integer.parseInt(sumString.charAt(0)));
-        ListNode list = new ListNode(Character.getNumericValue(stringSum.charAt(2)));
-           ListNode list1 = new ListNode(Character.getNumericValue(stringSum.charAt(1)));
-           ListNode list2 = new ListNode(Character.getNumericValue(stringSum.charAt(0)));
-            
-            list.next = list1;
-        list1.next = list2;
-        // list.val = Integer.parseInt(sumString.charAt(2));
-        // list.next.val = Integer.parseInt(sumString.charAt(1));
-        // list.next.next.val = Integer.parseInt(sumString.charAt(0));
+        int[] arr = new int[stringSum.length()];
         
+        int counter = 0;
+        int size = stringSum.length() - 1;
         
+        for(int i = size; i > -1; i--){
+       
+            arr[counter++] += Character.getNumericValue(stringSum.charAt(i));
+        
+        }
+        
+        int counter2 = 1;
 
 
+           ListNode list = new ListNode(arr[0]);
+  
+        if (size > 0) {
+
+           ListNode last = list;
+           while(size > 0 ){
+               
+           ListNode tmp = new ListNode(arr[counter2]);
+           last.next = tmp;
+           last = last.next;
+         
+               size--;
+               counter2++;
+           }
+               return list;
+        }
         return list;
-        
-        
     }
+
 }
