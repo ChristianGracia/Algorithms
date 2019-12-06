@@ -1,23 +1,28 @@
 class Solution {
     public int balancedStringSplit(String s) {
 
-        int counter = 0;
-        char first = s.charAt(0);
-        int counter2 = 0;
+        int length = s.length();
+        int[] numArr = new int[length - 1];
 
-        for (int i = 0; i < s.length() - 1; i++) {
+        for (int i = 0; i < length - 1; i++) {
 
-            if (s.charAt(i) != first && counter2 == 1) {
-                counter++;
-                counter2++;
-            }
-
-            else {
-                counter2--;
-                first = s.charAt(i);
+            if (Character.toLowerCase(s.charAt(i)) == 'r') {
+                numArr[i] = -1;
+            } else {
+                numArr[i] = 1;
             }
         }
-        return counter;
+
+        int sum = 0;
+        int balancedStrings = 0;
+
+        for (int item : numArr) {
+            sum += item;
+            if (sum == 0) {
+                balancedStrings++;
+            }
+        }
+        return balancedStrings + 1;
 
     }
 }
