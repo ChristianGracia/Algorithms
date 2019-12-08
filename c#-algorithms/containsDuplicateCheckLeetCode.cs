@@ -1,5 +1,15 @@
 public class Solution {
     public bool ContainsDuplicate(int[] nums) {
+      if (nums.Length != nums.Distinct().Count())
+          return true;
+    return false;
+    }
+    
+}
+
+
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
     foreach(int item in nums){
      if(Array.IndexOf(nums, item) != Array.LastIndexOf(nums, item)){
          return true;
