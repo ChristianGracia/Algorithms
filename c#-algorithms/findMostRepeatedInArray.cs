@@ -1,23 +1,31 @@
 public class Solution {
  public int MajorityElement(int[] nums) {
 
-  int zeroCount = Array.FindAll(nums, e => e == 0).Length;
 
-  int currentMaxRepeated = zeroCount > 0 ? zeroCount : 0;
+
+  int currentMaxRepeated = 0;
   int maxRepeatedValue = 0;
+    
 
 
   foreach(int item in nums) {
-   if (item != 0) {
+    if(nums.Distinct().ToArray().Length == 1){
+        if (nums.Length > currentMaxRepeated) {
+     currentMaxRepeated = nums.Length;
+     maxRepeatedValue = nums[0];
+   }
+        break;
+        
+        
+    }
+  
     int[] numberFrequency = Array.FindAll(nums, e => e == item);
+    nums = Array.FindAll(nums, e => e != item);
     if (numberFrequency.Length > currentMaxRepeated) {
      currentMaxRepeated = numberFrequency.Length;
      maxRepeatedValue = item;
-     for (int i = 0; i < nums.Length; i++) {
-      nums[i] = 0;
-     }
 
-    }
+
 
    }
 
