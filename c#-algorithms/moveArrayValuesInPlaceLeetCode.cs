@@ -6,9 +6,9 @@ public class Solution {
                 nums[lastNoneZeroIndex++] = nums[current];    
          }
             
-        for (int i = lastNoneZeroIndex; i < nums.Length; i++) 
+        for (int newZero = lastNoneZeroIndex; newZero < nums.Length; newZero++) 
         {
-            nums[i] = 0;
+            nums[newZero] = 0;
         }
     
     }
