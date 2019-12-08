@@ -3,9 +3,10 @@ public class Solution {
         
         int max = 0;
         int max1 = 0;
-        foreach(int i in nums){
-            if(i > max)
-                max = i;
+        int maxNum = 0;
+        foreach(int item in nums){
+            if(item > max)
+                max = item;
             
         }
         
@@ -14,12 +15,13 @@ public class Solution {
         foreach(int item in nums){
             arr[item]++;
         }
-        for(int i = 0; i < nums.Length; i ++){
+        
+        for(int i = 0; i < arr.Length; i ++){
             if (arr[i] > max1)
-                max1 = i;
+                maxNum = i;
         }
         
-        return max1;
+        return maxNum;
         
         
         
