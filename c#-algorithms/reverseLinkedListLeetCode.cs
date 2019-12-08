@@ -1,6 +1,9 @@
 
 public class Solution {
     public ListNode ReverseList(ListNode head) {
+        if(head == null){
+            return null;
+        }
         
         ListNode trav = head;
         List<int> numList = new List<int>();
@@ -21,6 +24,7 @@ public class Solution {
 
         }
         return returnNode;
+
 
     }
 }
