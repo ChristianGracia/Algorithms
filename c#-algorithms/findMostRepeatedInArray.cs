@@ -1,29 +1,27 @@
 public class Solution {
     public int MajorityElement(int[] nums) {
+
         
-        int max = 0;
-        int max1 = 0;
-        int maxNum = 0;
-        foreach(int item in nums){
-            if(item > max)
-                max = item;
-            
-        }
+        int maxNumber = nums.Max();
+        int maxIndex = 0;
+        int mostRepeatedValue = 0;
         
-        int[] arr = new int[max+1];
+        int[] arr = new int[maxNumber+1];
         
         foreach(int item in nums){
             arr[item]++;
         }
+
         
-        for(int i = 0; i < arr.Length; i ++){
-            if (arr[i] > max1)
-                maxNum = i;
+        for(int i = beginning; i < arr.Length; i++){
+            if (arr[i] > maxIndex){
+                maxIndex = arr[i];
+                mostRepeatedValue = i;
+                
+            }
+               
         }
         
-        return maxNum;
-        
-        
-        
+        return mostRepeatedValue;  
     }
 }
