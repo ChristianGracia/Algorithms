@@ -1,9 +1,9 @@
 public class Solution {
     public void MoveZeroes(int[] nums) {
          int lastNoneZeroIndex = 0;
-         for (int i = 0; i < nums.Length; i++) {
-            if (nums[i] != 0) 
-                nums[lastNoneZeroIndex++] = nums[i];    
+         for (int current = 0; current < nums.Length; current++) {
+            if (nums[current] != 0) 
+                nums[lastNoneZeroIndex++] = nums[current];    
          }
             
         for (int i = lastNoneZeroIndex; i < nums.Length; i++) 
