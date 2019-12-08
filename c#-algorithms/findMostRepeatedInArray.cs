@@ -1,5 +1,26 @@
 public class Solution {
     public int MajorityElement(int[] nums) {
+        
+        int currentMaxRepeated = 0;
+        int maxRepeatedValue = 0;
+        
+        foreach(int item in nums){
+            int[] numberFrequency  = Array.FindAll(nums, e => e == item);
+            if(numberFrequency.Length > currentMaxRepeated){
+                currentMaxRepeated = numberfrequency.Length;
+                maxRepeatedValue = item;
+            }
+        }
+        
+        
+        return maxRepeatedValue;
+    }
+}
+
+
+
+public class Solution {
+    public int MajorityElement(int[] nums) {
 
         
         int maxNumber = nums.Max();
