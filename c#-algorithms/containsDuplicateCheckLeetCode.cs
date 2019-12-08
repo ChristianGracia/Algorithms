@@ -9,3 +9,23 @@ public class Solution {
     
     }
 }
+
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        
+        List<int> numList = new List<int>();
+        
+        foreach(int num in nums){
+            if(numList.Contains(num))
+              return true;
+            else{
+                numList.Add(num);
+            }
+        }
+        return false;
+    }
+              
+             
+        
+
+}
