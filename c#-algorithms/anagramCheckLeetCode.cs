@@ -1,15 +1,28 @@
 public class Solution {
-    public bool IsAnagram(string s, string t) {
-        
-    string sLetters = s.Split("").Sort();
-    string tLetters = t.split("").Sort();
-        
-    foreach(String item in sLetters)
-        Console.WriteLine(item);
-    
-    foreach(String item1 in tLetters)
-        Console.WriteLine(item1);
-    
-        
+ public bool IsAnagram(string s, string t) {
+     
+ if (s.Length != t.Length)
+     return false;
+
+  char[] sLetters = s.ToArray();
+  char[] tLetters = t.ToArray();
+     
+
+  Array.Sort(sLetters);
+  Array.Sort(tLetters);
+ 
+   
+  {
+
+   for (int i = 0; i < tLetters.Length; i++) {
+    if (sLetters[i] != tLetters[i]){
+        return false;
     }
+
+   }
+   return true;
+
+  } 
+ }
+
 }
