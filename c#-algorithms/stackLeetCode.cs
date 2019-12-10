@@ -1,31 +1,31 @@
 public class MinStack {
-    List<int> stack {get;set;}
+    public List<int> stack {get;set;}
     
 
   
     public MinStack() {
-        stack = new List<int>();
+        this.stack = new List<int>();
     }
     
     public void Push(int x) {
 
-        stack.Add(x);
+        this.stack.Add(x);
     }
     
     public void Pop() {
 
-        stack.RemoveAt(stack.Count - 1);
+        this.stack.RemoveAt(this.stack.Count - 1);
   
     }
     
     public int Top() {
        
-        return stack[stack.Count-1];
+        return this.stack[this.stack.Count-1];
         
     }
     
     public int GetMin() {
-           return stack.Min(x => x);
+           return this.stack.Min(x => x);
         
     }
 }
