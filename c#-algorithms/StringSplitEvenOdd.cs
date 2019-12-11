@@ -5,8 +5,7 @@ class Solution {
     static void Main(String[] args) {
 
         int numberOfCases = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine(numberOfCases);
-
+        
         for(int i = 0; i < numberOfCases; i++){
             string inputString = Console.ReadLine();
             string evenString = "";
@@ -25,3 +24,5 @@ class Solution {
         }
     }
 }
+
+
