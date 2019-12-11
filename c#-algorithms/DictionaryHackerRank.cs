@@ -12,14 +12,17 @@ class Solution {
             dictionary.Add(inputString[0], inputString[1]);
         }
 
-        string name = Console.ReadLine();
 
-        ArrayList<string> nameList = new ArrayList<string>();
 
-    
-      while(Console.ReadLine()){
-          
+        List<string> nameList = new List<string>();
 
+      string name = "";
+     while (!string.IsNullOrEmpty(name = Console.ReadLine())){
+        nameList.Add(name);
+      }
+
+      foreach(string names in nameList){
+          Console.WriteLine(names);
       }
           
 
