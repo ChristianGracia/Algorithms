@@ -1,15 +1,14 @@
 int maxDigit(int n) {
- int c = n;
+ int number = n;
  int highestDigit = 0;
- System.out.println(n % 10);
 
- while (c > 9) {
-  if (c % 10 > highestDigit) {
-   highestDigit = c % 10;
+ while (number > 9) {
+  if (number % 10 > highestDigit) {
+   highestDigit = number % 10;
 
   }
 
-  c = c / 10;
+  number = number / 10;
  }
 
 
