@@ -1,15 +1,12 @@
 int[] onlyEvenNumbers(int left, int right)
 {
 
-    List<int> numbers = new List<int>();
+    List<int> evenNumbers = new List<int>();
 
-    for (int i = left; i <= right; i++)
+    for (int number = left; number <= right; number++)
     {
-        if (i % 2 == 0)
-        {
-            numbers.Add(i);
-        }
+        if (number % 2 == 0)
+            evenNumbers.Add(number);
     }
-    return numbers.ToArray();
-
+    return evenNumbers.ToArray();
 }
