@@ -1,3 +1,14 @@
+List onlyEvenNumbers(int left, int right) {
+    
+    var evenNumbers = new ArrayList<>();
+    while (++left <= right)
+        evenNumbers.add(left++);
+    
+    return evenNumbers;
+
+}
+
+
 int[] onlyEvenNumbers(int left, int right) {
 
  ArrayList < Integer > evenNumbers = new ArrayList < Integer > ();
