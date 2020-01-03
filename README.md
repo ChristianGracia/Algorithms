@@ -8,7 +8,7 @@ This repo contains algorithms and games I've written
 
 **C#**
 
-**java**
+**Java**
 
 **Python**
 
