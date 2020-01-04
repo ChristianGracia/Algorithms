@@ -10,3 +10,8 @@ String[] removeDuplicateStrings(String[] inputArray) {
     return  list.toArray(new String[list.size()]);
 
 }
+
+//faster solution
+Object removeDuplicateStrings(List<String> list) {
+    return new LinkedHashSet(list).toArray();
+}
