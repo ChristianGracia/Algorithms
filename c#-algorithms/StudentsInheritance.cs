@@ -23,7 +23,6 @@ class Person
 class Student : Person
 {
     private int[] testScores;
-    Person person;
 
     public Student(string firstName, string lastName, int id, int[] scores)
     {
@@ -47,44 +46,34 @@ class Student : Person
             counter++;
         }
 
-        int average = sum / counter;
-        int gradeNum = Convert.ToInt32(average / 10);
-        char grade = 'z';
-        switch (gradeNum)
+        int average = Convert.ToInt32(sum / counter);
+
+        if (average <= 100 && average >= 90)
         {
-            case 9:
-                grade = 'O';
-                break;
-            case 8:
-                grade = 'A';
-                break;
-            case 7:
-                grade = 'E';
-                break;
-            case 6:
-                grade = 'P';
-                break;
-            case 5:
-                grade = 'D';
-                break;
-
-            default:
-                grade = 'T';
-                break;
-
-
-
+            return 'O';
         }
-        Console.WriteLine(average);
-        return grade;
-
-
-
-
+        else if (average < 90 && average >= 80)
+        {
+            return 'E';
+        }
+        else if (average < 80 && average >= 70)
+        {
+            return 'A';
+        }
+        else if (average < 70 && average >= 55)
+        {
+            return 'P';
+        }
+        else if (average < 55 && average >= 40)
+        {
+            return 'D';
+        }
+        else
+        {
+            return 'T';
+        }
 
     }
-
-
 }
 
 class Solution
