@@ -1,29 +1,16 @@
 string insertDashes(string inputString)
 {
-    string[] wordArr = inputString.Split(" ");
     string returnString = "";
-    foreach (string word in wordArr)
+    int length = inputString.Length;
+
+    for (int i = 0; i < length; i++)
     {
-        foreach (char letter in word)
+        char letter = inputString[i];
+        returnString += letter;
+        if (letter != ' ' && i != length - 1)
         {
-            if (letter != ' ')
-            {
-                returnString += letter;
-                returnString += "-";
-            }
-            else
-            {
-                returnString + " ";
-
-            }
-
+            returnString += "-";
         }
-
-
-
     }
-
-
-    return returnString;
-
+    return returnString.Replace("- ", " ");
 }
