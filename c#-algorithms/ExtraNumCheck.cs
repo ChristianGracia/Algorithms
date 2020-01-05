@@ -1,5 +1,12 @@
 int extraNumber(int a, int b, int c)
 {
+    return a ^ b ^ c;
+}
+
+
+
+int extraNumber(int a, int b, int c)
+{
 
     if (a == b)
     {
