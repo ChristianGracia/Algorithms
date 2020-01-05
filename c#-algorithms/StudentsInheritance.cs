@@ -36,18 +36,20 @@ class Student : Person
     }
     public char Calculate()
     {
-
-        int counter = 0;
         int sum = 0;
 
         foreach (var item in testScores)
         {
             sum += item;
-            counter++;
         }
+        int average = Convert.ToInt32(sum / this.testScores.Length);
 
-        int average = Convert.ToInt32(sum / counter);
+        return returnGrade(average);
 
+    }
+
+    public char returnGrade(int average)
+    {
         if (average <= 100 && average >= 90)
         {
             return 'O';
