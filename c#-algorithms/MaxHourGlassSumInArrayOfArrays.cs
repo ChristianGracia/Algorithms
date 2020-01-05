@@ -29,28 +29,20 @@ class Solution
 
         for (int i = 0; i < 4; i++)
         {
-            if (i % 2 == 0)
+            for (int k = 0; k < 4; k++)
             {
-                for (int k = 0; k < 4; k++)
+                int count = 0;
+                for (int l = k; l < k + 3; l++)
                 {
-                    int count = 0;
-                    for (int l = k; l < i + 3; l++)
-                    {
-                        count += arr[i][l];
-                        count += arr[i + 2][l];
-                    }
-                    count += arr[i + 1][k + 1];
-
-                    if (count > max)
-                    {
-                        max = count;
-                    }
-
-
-
+                    count += arr[i][l];
+                    count += arr[i + 2][l];
                 }
+                count += arr[i + 1][k + 1];
 
-
+                if (count > max)
+                {
+                    max = count;
+                }
             }
 
 
