@@ -19,7 +19,7 @@ class Solution
     static void Main(string[] args)
     {
         int number = Convert.ToInt32(Console.ReadLine());
-        int[] binaryArr = new int[50];
+        int[] binaryArr = new int[19];
         int i;
         for (i = 0; number > 0; i++)
         {
@@ -30,7 +30,7 @@ class Solution
         int count = 0;
         int mostConsecutiveOnes = 0;
 
-        for (int j = 0; j < 50; j++)
+        for (int j = 0; j < 19; j++)
         {
 
             if (binaryArr[j] == 1)
