@@ -35,7 +35,7 @@ class Student : Person
 
 
     }
-    public int Calculate()
+    public char Calculate()
     {
 
         int counter = 0;
@@ -48,26 +48,42 @@ class Student : Person
         }
 
         int average = sum / counter;
-
-        switch (average)
+        int gradeNum = Convert.ToInt32(average / 10);
+        char grade = 'z';
+        switch (gradeNum)
         {
-            case >= 90:
-                return "O";
-            case >= 80:
-                return "A";
-            case >= 70:
-                return "E";
-            case >= 60:
-                return "P";
-            case >= 50:
-                return "D";
-            case >= 40:
-                return "T";
+            case 9:
+                grade = 'O';
+                break;
+            case 8:
+                grade = 'A';
+                break;
+            case 7:
+                grade = 'E';
+                break;
+            case 6:
+                grade = 'P';
+                break;
+            case 5:
+                grade = 'D';
+                break;
+
+            default:
+                grade = 'T';
+                break;
+
+
 
         }
+        Console.WriteLine(average);
+        return grade;
+
+
+
 
 
     }
+
 
 }
 
