@@ -15,12 +15,10 @@ using System;
 class Solution
 {
 
-
-
     static void Main(string[] args)
     {
         int[][] arr = new int[6][];
-        int max = -10000;
+        int maxHourglassSum = -10000;
 
         for (int i = 0; i < 6; i++)
         {
@@ -29,27 +27,22 @@ class Solution
 
         for (int rows = 0; rows < 4; rows++)
         {
-            for (int k = 0; k < 4; k++)
+            for (int start = 0; start < 4; start++)
             {
                 int count = 0;
-                for (int l = k; l < k + 3; l++)
+                for (int next = start; next < start + 3; next++)
                 {
-                    count += arr[i][l];
-                    count += arr[i + 2][l];
+                    count += arr[rows][next];
+                    count += arr[rows + 2][next];
                 }
-                count += arr[i + 1][k + 1];
+                count += arr[rows + 1][start + 1];
 
-                if (count > max)
+                if (count > maxHourglassSum)
                 {
-                    max = count;
+                    maxHourglassSum = count;
                 }
             }
-
-
         }
         Console.WriteLine(max);
-
-
-
     }
 }
