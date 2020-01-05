@@ -14,3 +14,5 @@ string insertDashes(string inputString)
     }
     return returnString.Replace("- ", " ");
 }
+
+string insertDashes(string I) => Regex.Replace(I, "\\B", "-");
