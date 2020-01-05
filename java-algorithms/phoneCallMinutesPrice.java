@@ -1,19 +1,30 @@
 int phoneCall(int min1, int min2_10, int min11, int s) {
-    int longestCall = 1;
+    if(s < min1){
+        return 0;
+    }
+    int total = 1;
+    
     s = s - min1;
     
-    while (s > 0)
-    {
-        longestCall++;
-       
-        if(longestCall < 10){
-         
-             s = s - min2_10;
-        }
-        else{
-         s = s-min11;
+    if(s>0){
+        int counter = 2;
+        while(counter < 11 && s >= min2_10 ){
+            total = total +1;
+            counter++;
+            s = s-min2_10;
+            
         }
         
+        while( s >= min11 && counter == 11 ){
+            total = total +1;
+            s = s-min11;
+            
+        }
     }
-    return longestCall;
+    return total;
+    
+    
 }
+
+// 0 1 2 3 4 5 6 7 8 9 10 
+// 2 3 4 5 6 7 8 9 10 11
