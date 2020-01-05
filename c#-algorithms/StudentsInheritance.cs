@@ -23,68 +23,72 @@ class Person
 class Student : Person
 {
     private int[] testScores;
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Id { get; set; }
-    public int[] scores { get; set; }
+    Person person;
 
-    class Student : Person
+    public Student(string firstName, string lastName, int id, int[] scores)
     {
-        private int[] testScores;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Id { get; set; }
-        public int[] Scores { get; set; }
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+
+        this.testScores = scores;
 
 
-        public Student(string firstName, string lastName, int id, int[] scores)
+    }
+    public int Calculate()
+    {
+
+        int counter = 0;
+        int sum = 0;
+
+        foreach (var item in testScores)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            sum += item;
+            counter++;
+        }
 
-            this.Id = id;
+        int average = sum / counter;
 
-            this.Scores = scores;
-
+        switch (average)
+        {
+            case >= 90:
+                return "O";
+            case >= 80:
+                return "A";
+            case >= 70:
+                return "E";
+            case >= 60:
+                return "P";
+            case >= 50:
+                return "D";
+            case >= 40:
+                return "T";
 
         }
-        public int Calculate()
-        {
 
-            int counter = 0;
-            int sum = 0;
 
-            foreach (var item in Scores)
-            {
-                sum += item;
-                counter++;
-            }
-
-            int average = sum / counter;
-
-            return average;
-
-        }
     }
 
-    class Solution
-    {
-        static void Main()
-        {
-            string[] inputs = Console.ReadLine().Split();
-            string firstName = inputs[0];
-            string lastName = inputs[1];
-            int id = Convert.ToInt32(inputs[2]);
-            int numScores = Convert.ToInt32(Console.ReadLine());
-            inputs = Console.ReadLine().Split();
-            int[] scores = new int[numScores];
-            for (int i = 0; i < numScores; i++)
-            {
-                scores[i] = Convert.ToInt32(inputs[i]);
-            }
+}
 
-            Student s = new Student(firstName, lastName, id, scores);
-            s.printPerson();
-            Console.WriteLine("Grade: " + s.Calculate() + "\n");
+class Solution
+{
+    static void Main()
+    {
+        string[] inputs = Console.ReadLine().Split();
+        string firstName = inputs[0];
+        string lastName = inputs[1];
+        int id = Convert.ToInt32(inputs[2]);
+        int numScores = Convert.ToInt32(Console.ReadLine());
+        inputs = Console.ReadLine().Split();
+        int[] scores = new int[numScores];
+        for (int i = 0; i < numScores; i++)
+        {
+            scores[i] = Convert.ToInt32(inputs[i]);
         }
+
+        Student s = new Student(firstName, lastName, id, scores);
+        s.printPerson();
+        Console.WriteLine("Grade: " + s.Calculate() + "\n");
     }
+}
