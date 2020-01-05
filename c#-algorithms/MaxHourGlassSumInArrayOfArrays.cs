@@ -20,14 +20,14 @@ class Solution
     static void Main(string[] args)
     {
         int[][] arr = new int[6][];
-        int max = 0;
+        int max = -10000;
 
         for (int i = 0; i < 6; i++)
         {
             arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
         }
 
-        for (int i = 0; i < 4; i++)
+        for (int rows = 0; rows < 4; rows++)
         {
             for (int k = 0; k < 4; k++)
             {
