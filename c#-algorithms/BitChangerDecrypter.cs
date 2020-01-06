@@ -2,32 +2,19 @@ int killKthBit(int n, int k)
 {
     char[] result = Convert.ToString(n, 2).ToCharArray();
     int length = result.Length;
-    Console.WriteLine(Convert.ToString(n, 2));
 
     string newString = "";
 
-    for (int i = 0; i < length; i++)
+    for (int index = 0; index < length; index++)
     {
-        if (i == length - k)
+        if (index == length - k)
         {
             newString += "0";
-
         }
         else
         {
-            newString += result[i].ToString();
+            newString += result[index].ToString();
         }
-
-
     }
-    Console.WriteLine(newString);
-
-
-
-    int newNum = Convert.ToInt32(newString, 2);
-
-    return newNum;
-
-
-
+    return Convert.ToInt32(newString, 2);
 }
