@@ -1,3 +1,11 @@
+//with bitwise bit flip
+int killKthBit(int n, int k)
+{
+    return n & ~(1 << (k - 1));
+}
+
+
+//without bitwise bit flip
 int killKthBit(int n, int k)
 {
     char[] result = Convert.ToString(n, 2).ToCharArray();
@@ -17,10 +25,5 @@ int killKthBit(int n, int k)
         }
     }
     return Convert.ToInt32(newString, 2);
-}
-
-int killKthBit(int n, int k)
-{
-    return n & ~(1 << (k - 1));
 }
 
