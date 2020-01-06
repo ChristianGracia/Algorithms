@@ -18,3 +18,9 @@ int killKthBit(int n, int k)
     }
     return Convert.ToInt32(newString, 2);
 }
+
+int killKthBit(int n, int k)
+{
+    return n & ~(1 << (k - 1));
+}
+
