@@ -24,7 +24,7 @@ int killKthBit(int n, int k)
 
 
 
-    int newNum = Integer.rseInt(newString, 2);
+    int newNum = Convert.ToInt32(newString, 2);
 
     return newNum;
 
