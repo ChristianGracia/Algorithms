@@ -1,3 +1,27 @@
+//refactored and nested loops
+int rangeBitCount(int a, int b)
+{
+
+    string[] binaryStrings = new string[b - a + 1];
+
+    int count = 0;
+
+    for (int index = 0, start = a; start <= b; index++, start++)
+    {
+        string numberString = Convert.ToString(start, 2).PadLeft(8, '0');
+        for (int bitIndex = 0; bitIndex < numberString.Length; bitIndex++)
+        {
+            if (numberString[bitIndex] == '1')
+            {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+
+//first solution
 int rangeBitCount(int a, int b)
 {
 
