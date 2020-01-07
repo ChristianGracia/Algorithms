@@ -10,7 +10,7 @@ namespace NumberSummer
             while (true)
             {
                 Console.WriteLine("Enter a number to add to sum");
-                var number = Console.ReadLine();
+                int number = Console.ReadLine();
 
                 if (number == "ok")
                 {
