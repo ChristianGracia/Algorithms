@@ -1,13 +1,25 @@
-int arrayPacking(int[] a)
+int rangeBitCount(int a, int b)
 {
-    string binaryString = "";
 
-    for (int index = a.Length - 1; index > -1; index--)
+    string[] binaryStrings = new string[b - a + 1];
+
+
+    for (int index = 0, start = a; start <= b; index++, start++)
     {
-        binaryString += Convert.ToString(a[index], 2).PadLeft(8, '0');
+        binaryStrings[index] = Convert.ToString(start, 2).PadLeft(8, '0');
+        Console.WriteLine(start);
+
+
     }
-    int newNum = Convert.ToInt32(binaryString, 2);
-    return newNum;
+
+    foreach (string item in binaryStrings)
+    {
+        Console.WriteLine(item);
+
+
+    }
+    Console.WriteLine(binaryStrings.Length);
+    return 0;
 
 }
 // You are given an array of up to four non-negative integers, each less than 256.
