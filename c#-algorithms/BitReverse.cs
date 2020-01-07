@@ -1,8 +1,19 @@
 int mirrorBits(int a)
 {
     string binaryString = Convert.ToString(a, 2);
+    string reversedString = "";
+
+
+    for (int index = binaryString.Length - 1; index >= 0; index--)
+    {
+        reversedString += binaryString[index];
+
+    }
+
+
     Console.WriteLine(binaryString);
-    return a;
+    Console.WriteLine(reversedString);
+    return Convert.ToInt32(reversedString, 2);
 
 }
 
