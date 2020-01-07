@@ -1,40 +1,40 @@
 ﻿using System;
 using System.IO;
 
-namespace  FindLongestWord
+namespace FindLongestWord
 {
     internal class Program
     {
         public static void Main(string[] args)
 
         {
-            var path = "";
+            string path = "";
             do
             {
                 Console.WriteLine("Enter the path of a file to find the longest word\n");
                 path += Console.ReadLine();
             } while (path == "");
 
-            var longestWord = LetterCounter(path);
+            string longestWord = LetterCounter(path);
             Console.WriteLine(longestWord);
         }
 
         public static string LetterCounter(string path)
         {
-            var fileArray = File.ReadAllText(path).Split('\n');
+            string[] textArray = File.ReadAllText(path).Split('\n');
 
-            var longestWord = "";
+            string longestWord = "";
 
-            foreach (var array in fileArray)
+            foreach (string line in textArray)
             {
-                foreach (var word in array.Split(" "))
+                foreach (string word in line.Split(" "))
                 {
                     if (word.Length > longestWord.Length)
                         longestWord = word;
                 }
             }
 
-            var result = "Longest word = " + longestWord;
+            string result = "Longest word = " + longestWord;
 
             return result;
         }
