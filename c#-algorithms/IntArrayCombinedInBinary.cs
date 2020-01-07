@@ -3,23 +3,30 @@ int rangeBitCount(int a, int b)
 
     string[] binaryStrings = new string[b - a + 1];
 
+    int count = 0;
+
 
     for (int index = 0, start = a; start <= b; index++, start++)
     {
         binaryStrings[index] = Convert.ToString(start, 2).PadLeft(8, '0');
         Console.WriteLine(start);
 
-
     }
 
     foreach (string item in binaryStrings)
     {
-        Console.WriteLine(item);
+        for (int index = 0; index < item.Length; index++)
+        {
+            if (item[index] == '1')
+            {
+                count++;
+            }
+        }
 
 
     }
-    Console.WriteLine(binaryStrings.Length);
-    return 0;
+
+    return count;
 
 }
 // You are given an array of up to four non-negative integers, each less than 256.
