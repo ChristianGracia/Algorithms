@@ -6,15 +6,15 @@ namespace DoubleLetterChecker
     {
         static void Main(string[] args)
         {
-            var boolFlag = false;
+            bool boolFlag = false;
             Console.WriteLine("Enter a word to search for doubles!");
-            var word = Console.ReadLine();
+            string word = Console.ReadLine();
             Console.WriteLine("word: " + word);
 
-            for (int i = 0; i < word.Length -1; i++)
+            for (int i = 0; i < word.Length - 1; i++)
             {
                 if (word[i] == word[i + 1])
-                   boolFlag = !boolFlag;
+                    boolFlag = !boolFlag;
 
             }
             if (boolFlag)
