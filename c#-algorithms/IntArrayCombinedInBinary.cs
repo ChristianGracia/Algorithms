@@ -1,16 +1,12 @@
 int arrayPacking(int[] a)
 {
-
     string binaryString = "";
 
-    for (int i = a.Length - 1; i > -1; i--)
+    for (int index = a.Length - 1; index > -1; index--)
     {
-        binaryString += Convert.ToString(a[i], 2).PadLeft(8, '0');
-        Console.WriteLine(binaryString);
+        binaryString += Convert.ToString(a[index], 2).PadLeft(8, '0');
     }
-    Console.WriteLine(binaryString);
     int newNum = Convert.ToInt32(binaryString, 2);
-    Console.WriteLine(newNum);
     return newNum;
 
 }
