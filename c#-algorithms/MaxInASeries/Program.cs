@@ -6,21 +6,21 @@ namespace MaxInASeries
     {
         static void Main(string[] args)
         {
-            var max = 0;
+            int max = 0;
             Console.WriteLine("Input numbers seperated by a comma to find max: ");
-            var answer = Console.ReadLine();
-            var counter = 1;
+            string answer = Console.ReadLine();
+            int counter = 1;
 
-            for (var i = 0; i < answer.Length; i++)
+            for (int i = 0; i < answer.Length; i++)
             {
                 if (answer[i] == ',')
                     counter++;
 
             }
-            var array = answer.Split(",");
-            for (var i = 0; i < counter; i++)
+            string[] stringArray = answer.Split(",");
+            for (int i = 0; i < counter; i++)
             {
-                var temp = Int32.Parse(array[i].Trim());
+                int temp = Int32.Parse(stringArray[i].Trim());
                 if (temp > max)
                     max = temp;
 
