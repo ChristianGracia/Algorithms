@@ -1,10 +1,10 @@
 int leastFactorial(int n) {
-    for(int i = 0;; i++){
+    for(int incrementer = 0;; incrementer++){
         int number = 1;
-        int j = i;
+        int factorialNum = incrementer;
         while(j > 1){
-            number = number * j;
-            j--;
+            number = number * factorialNum;
+            factorialNum--;
         }
         if(number >= n){
             return number;
