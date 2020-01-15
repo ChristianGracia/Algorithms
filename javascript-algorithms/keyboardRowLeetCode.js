@@ -7,16 +7,16 @@ var findWords = function (words) {
     words.forEach(word => {
         let topCheck = true;
         let middleCheck = true;
-        for (let i = 0; i < word.Length; i++) {
-            if (!topRow.includes(word[i])) {
+        for (let i = 0; i < word.length; i++) {
+            if (topRow.indexOf(word[i].toLowerCase()) < 0) {
                 topCheck = false;
             }
 
-            if (!middleRow.includes(word[i])) {
+            if (middleRow.indexOf(word[i].toLowerCase()) < 0) {
                 middleCheck = false;
             }
         }
-        if (topCheck || bottomCheck) {
+        if (topCheck || middleCheck) {
             wordArr.push(word);
         }
 
