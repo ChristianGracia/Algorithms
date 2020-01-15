@@ -6,7 +6,7 @@ int leastFactorial(int n) {
             number = number * j;
             j--;
         }
-        if(number > n){
+        if(number >= n){
             return number;
         }
         
