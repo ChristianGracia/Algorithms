@@ -10,3 +10,8 @@ int[] arrayReplace(int[] inputArray, int elemToReplace, int substitutionElem)
     return inputArray;
 
 }
+
+int[] arrayReplace(int[] inputArray, int elemToReplace, int substitutionElem)
+{
+    return inputArray.Select(item => item == elemToReplace ? substitutionElem : item).ToArray();
+}
