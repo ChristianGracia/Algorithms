@@ -1,5 +1,16 @@
 int createAnagram(string s, string t)
 {
+    var letters = s.ToList();
+
+    foreach (char c in t)
+        letters.Remove(c);
+
+    return letters.Count;
+}
+
+
+int createAnagram(string s, string t)
+{
     int counter = 0;
 
     int[] lettersString1 = new int[26];
