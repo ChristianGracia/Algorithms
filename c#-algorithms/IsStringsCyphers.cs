@@ -1,14 +1,31 @@
 bool isSubstitutionCipher(string string1, string string2)
 {
-
-    int[] letterArr = new int[26];
+    Dictionary<char, char> firstStringDictionary = new Dictionary<char, char>();
+    Dictionary<char, char> secondStringDictionary = new Dictionary<char, char>();
     for (int i = 0; i < string1.Length; i++)
     {
-        Console.WriteLine(string1[i]);
-
-
+        char letterString1 = string1[i];
+        char letterString2 = string2[i];
+        if (firstStringDictionary.ContainsKey(letterString1))
+        {
+            if (letterString2 != firstStringDictionary[letterString1])
+                return false;
+        }
+        else
+        {
+            firstStringDictionary.Add(letterString1, letterString2);
+        }
+        if (secondStringDictionary.ContainsKey(letterString2))
+        {
+            if (letterString1 != secondStringDictionary[letterString2])
+                return false;
+        }
+        else
+        {
+            secondStringDictionary.Add(letterString2, letterString1);
+        }
     }
-
+    return true;
 }
 
 
