@@ -1,2 +1,2 @@
 def amendTheSentence(s):
-    return re.sub('[A-Z\s]', ' ', s).strip()
+    return re.sub('[A-Z\s]', ' \1', s).strip().lower()
