@@ -1,15 +1,45 @@
-int strstr(string s, string x) {
+int strstr(string s, string x)
+{
+
+    for (int i = 0, j = 0; i < s.Length; i++)
+    {
+        if (s[i] == x[j])
+        {
+            j++;
+            if (j == x.Length)
+            {
+                return i - x.Length + 1;
+            }
+        }
+        else
+        {
+            j = 0;
+        }
+
+    }
+
+    return -1;
+
+
+}
+
+int strstr(string s, string x)
+{
     int counter = 0;
     int index = 0;
-    foreach(char letter in s){
+    foreach (char letter in s)
+    {
         index++;
-        if(letter == x[counter]){
+        if (letter == x[counter])
+        {
             counter++;
-            if(counter == x.Length -1){
+            if (counter == x.Length - 1)
+            {
                 return index - counter;
             }
         }
-        else{
+        else
+        {
             counter = 0;
         }
     }
