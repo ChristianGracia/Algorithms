@@ -1,21 +1,6 @@
 string[] pressingButtons(string buttons)
 {
 
-    // string[] returnStrings = new string[1];
-    // Dictionary<int, string> numDictionary = new Dictionary<int, string>();
-    // numDictionary.Add(2,"abc");
-    // numDictionary.Add(3,"def");
-    // numDictionary.Add(4,"ghi");
-    // numDictionary.Add(5,"jkl");
-    // numDictionary.Add(6,"mno");
-    // numDictionary.Add(7,"pqrs");
-    // numDictionary.Add(8,"tuv");
-    // numDictionary.Add(9,"wxyz");
-    // Console.WriteLine(numDictionary[2][1]);
-
-    // for(int i = 0; i < )
-    // return returnStrings;
-
     List<string> returnList = new List<string>();
     string[] numberValues = "abc def ghi jkl mno pqrs tuv wxyz".Split(" ");
 
@@ -29,16 +14,19 @@ string[] pressingButtons(string buttons)
     }
     Console.WriteLine(numLength);
 
+    for (int i = 0; i < numLength; i++)
+    {
+        string newString = "";
+        for (int j = 0; j < nums.Length; j++)
+        {
+            newString += numberValues[nums[j] - 2];
+        }
+        returnList.Add(newString);
 
-
-    // for(int i = 0; i < ){
-
-    // }
-
-    // Console.WriteLine(numberValues[1]);
+    }
     return returnList.ToArray();
-
 }
+
 
 
 
