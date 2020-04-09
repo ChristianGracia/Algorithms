@@ -1,5 +1,15 @@
 def checkPalindrome(inputString)
 
+return inputString == inputString.reverse ? true : false
+
+end
+
+
+
+
+
+def checkPalindrome(inputString)
+
 if inputString == inputString.reverse
 return true
 else
