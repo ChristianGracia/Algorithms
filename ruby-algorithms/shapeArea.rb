@@ -1,14 +1,14 @@
 def shapeArea(n)
 
-$area = 1
-$limit = n - 1
+area = 1
+limit = n - 1
 
 while $limit > 0 do
 
-        $area += (($limit) * 4)
-    $limit -= 1
+        area += ((limit) * 4)
+    limit -= 1
 end
-return $area
+return area
 end
 
 
