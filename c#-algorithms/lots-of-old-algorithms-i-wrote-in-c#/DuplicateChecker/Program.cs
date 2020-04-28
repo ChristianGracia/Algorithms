@@ -8,15 +8,15 @@ namespace DuplicateChecker
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a series of numbers seperated by a hyphen to check duplicates");
-            var series = Console.ReadLine();
+            string series = Console.ReadLine();
 
-            var duplicateResult = DuplicateResult(series);
+            string duplicateResult = DuplicateResult(series);
             Console.WriteLine(duplicateResult);
         }
 
         public static string DuplicateResult(string series)
         {
-            var result = "no duplicates found";
+            string result = "no duplicates found";
 
             if (series == "")
             {
@@ -24,8 +24,8 @@ namespace DuplicateChecker
                 return result;
             }
 
-            var numberArray = series.Split("-");
-            var numberList = new List<int>();
+            int[] numberArray = series.Split("-");
+            List<int> numberList = new List<int>();
 
             for (var i = 0; i < numberArray.Length - 1; i++)
             {
