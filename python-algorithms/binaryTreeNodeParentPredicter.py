@@ -35,7 +35,6 @@ def solution(h, q):
                     numberLeft = number-(numberBefore/2)-1
                     numberRight = number-1
                 returnArr.append(int(number))
-    print(returnArr)
     return returnArr
 
 
