@@ -17,44 +17,16 @@
 
 s = "<<>><"
 
-s = ">----<"
+s = "--->-><-><-->-"
 
 
 def solution(s):
-    length = len(s) - 1
-    headedRight = s.count('>')
-
-    headedLeft = s.count('<')
+    index = len(s) - 1
     salutes = 0
 
-    print(s)
-    # print(headedLeft)
-    # print(headedRight)
-
-    counter = length
-    for x in range(counter, 0, -1):
+    for x in range(index, 0, -1):
         if s[x] == '<':
-            tempString = s[0::x]
-            salutes = tempString.count('>')
+            tempString = s[0:x]
+            salutes += tempString.count('>')
         x -= 1
-
-    print(salutes * 2)
-    return salutes * 2
-
-
-solution(s)
-
-# no prints for submission
-def solution(s):
-    length = len(s) - 1
-
-    salutes = 0
-
-    counter = length
-    for x in range(counter, 0, -1):
-        if s[x] == '<':
-            tempString = s[0::x]
-            salutes = tempString.count('>')
-        x -= 1
-
     return salutes * 2
