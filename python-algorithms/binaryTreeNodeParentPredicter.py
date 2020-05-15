@@ -2,6 +2,9 @@
 #  3   6
 # 1 2 4 5
 
+
+# post order traversal perfect binary tree parent node predicter
+
 import math
 
 h = 5
