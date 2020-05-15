@@ -28,5 +28,4 @@ def solution(s):
         if s[x] == '<':
             tempString = s[0:x]
             salutes += tempString.count('>')
-        x -= 1
     return salutes * 2
