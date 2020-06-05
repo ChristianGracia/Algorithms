@@ -1,8 +1,10 @@
 func reverseSentence(sentence: String) -> String {
-    let array = sentence.split(separator:" ")
+let array = sentence.split(separator:" ")
     print(array)
+    var reversedString = array.reversed().joined(separator: " ")
 
-    return sentence
+
+    return reversedString
 
 
 }
