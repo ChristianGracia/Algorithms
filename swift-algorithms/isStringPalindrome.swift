@@ -1,13 +1,6 @@
 func checkPalindrome(inputString: String) -> Bool {
-    
-
-    if(inputString == String(Array(inputString).reversed())){
-        return true
-    }
-    return false
-    
+    return inputString == String(Array(inputString).reversed()) ? true : false
 }
-
 
 
 func checkPalindrome(inputString: String) -> Bool {
