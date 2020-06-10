@@ -12,6 +12,18 @@ func checkPalindrome(inputString: String) -> Bool {
     
 }
 
+func checkPalindrome(inputString: String) -> Bool {
+    
+ 
+    var reversedString = String(Array(inputString).reversed())
+
+    if(inputString == reversedString){
+        return true
+    }
+    return false
+    
+}
+
 
 // Given the string, check if it is a palindrome.
 
