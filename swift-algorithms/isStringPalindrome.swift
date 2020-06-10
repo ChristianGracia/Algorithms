@@ -1,5 +1,17 @@
 func checkPalindrome(inputString: String) -> Bool {
     
+
+    if(inputString == String(Array(inputString).reversed())){
+        return true
+    }
+    return false
+    
+}
+
+
+
+func checkPalindrome(inputString: String) -> Bool {
+    
     var reversedArray = Array(inputString)
     var reversedString = String(reversedArray.reversed())
     print(inputString)
