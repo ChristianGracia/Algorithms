@@ -9,7 +9,11 @@
 // For time = "02:76", the output should be
 // validTime(time) = false.
 
-func validTime(time t: String) -> Any {
-    let a = t.split(separator: ":")
-    return "00"..."23" ~= a[0] && "00"..."59" ~= a[1]
+func validTime(time: String) -> Any {
+    let timeArr = time.split(separator: ":")
+    return "00"..."23" ~= timeArr[0] && "00"..."59" ~= timeArr[1]
+}
+
+func validTime(time: String) -> Bool {
+    time < "24" && Array(time)[3] < "6"
 }
