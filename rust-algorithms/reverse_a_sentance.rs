@@ -13,3 +13,7 @@ fn reverseSentence(sentance: String) -> String {
 
     return mutableSentance.join(" ")
 }
+
+fn reverseSentence(sentance: String) -> String {
+    sentance.split(' ').rev().collect::<Vec<_>>().join(" ")
+}
