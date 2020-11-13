@@ -12,7 +12,7 @@ public class Main {
         }
     }
 
-    public static int[] shellSort(int[] unsortedIntArray) {
+    public static int[] shellSort(int[] unsortedIntArray) { 
 
         for (int gap = unsortedIntArray.length / 2; gap >  0; gap /= 2) {
 
