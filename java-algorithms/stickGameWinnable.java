@@ -1,90 +1,106 @@
 package com.cg;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        int[] moveChoices = {1, 4, 2};
 
-        // n sticks
-        // possible options 1, 4, 2, take that amount of sticks
-        // whoever draws last stick wins
-        int[] moveChoices =  { 1 , 4, 2 };
-
-        System.out.println(win(3, moveChoices ));
+        System.out.println(win(3, moveChoices));
 
         //with 5
-        System.out.println(win(5, moveChoices ));
-
-
+//        System.out.println(win(5, moveChoices));
 
     }
 
-    public static int getIndex(int value, int arr[])
-    {
+    public static int getIndex(int value, int arr[]) {
 
         int index = Arrays.binarySearch(arr, value);
         return (index < 0) ? -1 : index;
     }
 
-    public static boolean checkIfNextMoveCanWin(int currentSticks, int[] arr){
-        return getIndex(currentSticks, arr) > -1 ;
+    public static boolean checkIfNextMoveCanWin(int currentSticks, int[] arr) {
+        return getIndex(currentSticks, arr) > -1;
     }
 
-    public static boolean checkIfNoAvailableMoves(int currentSticks, int[] arr){
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] <= currentSticks){
+    public static boolean checkIfAvailableMoves(int currentSticks, int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= currentSticks) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean win(int numberOfSticks, int[] moveChoices){
+    public static int[] replaceLargeValues(int limit, int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > limit) {
+                arr[i] = 0;
+            }
+        }
+        return arr;
+    }
 
-        int arrLength = moveChoices.length;
+    public static Stack<int[]> getAllOrdersOfItems(int[] arr) {
+        int[] a = arr.clone();
+        ArrayList<String> combinationsAsString = new ArrayList<String>();
+        Stack<int[]> possibleOrders
+                = new Stack<>();
+        int temp;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                String obj = Arrays.toString(a);
+                if (!combinationsAsString.contains(obj)) {
+                    combinationsAsString.add(obj);
+
+                    possibleOrders.add(a);
+                }
+                a = arr.clone();
+            }
+        }
+        return possibleOrders;
+    }
+
+
+    public static boolean win(int numberOfSticks, int[] moveChoices) {
 
         int currentSticks = numberOfSticks;
         int[] tempMoveArr = moveChoices;
+        int turnCounter = 0;
 
+        Stack allPossibleOrders = getAllOrdersOfItems(moveChoices);
 
-        for(int i = 0; i < arrLength; i++) {
-            for (int j = 0; j < arrLength; j++) {
-                if (i == j) {
-                    j++;
-                }
+        while (allPossibleOrders.size() > 0) {
 
-                if (checkIfNextMoveCanWin(currentSticks, tempMoveArr)) {
-                    return true;
-                }
-                if (checkIfNoAvailableMoves(currentSticks, tempMoveArr)) {
-                    return false;
-                }
+            int[] currentArr = (int[]) allPossibleOrders.peek();
 
-                if (tempMoveArr[i] <= currentSticks) {
-                    currentSticks -= tempMoveArr[i];
-                    System.out.println("current sticks " + currentSticks);
-                } else {
+            for(int j = 0; j < currentArr.length; j++){
+                System.out.print(currentArr[j] + ", ");
+            }
+            System.out.println();
 
-                    System.out.println("move: " + tempMoveArr[i] + " " + " current sticks: " + currentSticks);
-                    tempMoveArr[i] = 0;
-                }
+            for (int i = 0; i < moveChoices.length; i++) {
 
-                if (currentSticks == 0) {
-                    return true;
-                }
-                if (checkIfNextMoveCanWin(currentSticks, tempMoveArr)) {
-                    return false;
-                }
-                if (checkIfNoAvailableMoves(currentSticks, tempMoveArr)) {
-                    return true;
-                }
+                System.out.println("Current sticks: " + currentSticks + " - " + currentArr[i]);
+                if (currentArr[i] <= currentSticks) {
+                    currentSticks -= currentArr[i];
 
+                    if (currentSticks == 0 && turnCounter % 2 == 0) {
+                        return true;
+                    }
+                }
+                turnCounter++;
 
             }
-            tempMoveArr = moveChoices;
+            //reset to try next possible order
             currentSticks = numberOfSticks;
+            allPossibleOrders.pop();
+
         }
         return false;
     }
