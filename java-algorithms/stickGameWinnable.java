@@ -8,39 +8,9 @@ public class Main {
 
         int[] moveChoices = {1, 4, 2};
 
-        System.out.println(win(3, moveChoices));
+        //System.out.println(win(3, moveChoices));
+        System.out.println(win(5, moveChoices));
 
-        //with 5
-//        System.out.println(win(5, moveChoices));
-
-    }
-
-    public static int getIndex(int value, int arr[]) {
-
-        int index = Arrays.binarySearch(arr, value);
-        return (index < 0) ? -1 : index;
-    }
-
-    public static boolean checkIfNextMoveCanWin(int currentSticks, int[] arr) {
-        return getIndex(currentSticks, arr) > -1;
-    }
-
-    public static boolean checkIfAvailableMoves(int currentSticks, int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= currentSticks) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static int[] replaceLargeValues(int limit, int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > limit) {
-                arr[i] = 0;
-            }
-        }
-        return arr;
     }
 
     public static Stack<int[]> getAllOrdersOfItems(int[] arr) {
@@ -75,10 +45,13 @@ public class Main {
 
         Stack allPossibleOrders = getAllOrdersOfItems(moveChoices);
 
+        System.out.println(allPossibleOrders.size());
+
         while (allPossibleOrders.size() > 0) {
 
             int[] currentArr = (int[]) allPossibleOrders.peek();
 
+            //printing
             for(int j = 0; j < currentArr.length; j++){
                 System.out.print(currentArr[j] + ", ");
             }
@@ -86,19 +59,37 @@ public class Main {
 
             for (int i = 0; i < moveChoices.length; i++) {
 
-                System.out.println("Current sticks: " + currentSticks + " - " + currentArr[i]);
+                System.out.println("Current sticks: " + currentSticks + " " + "Current value: " + currentArr[i]);
+
+                //if current value is less then sticks then subtract, if 0 the win
+                //if oponnent has no moves win
+                if(turnCounter % 2 != 0 && i == moveChoices.length){
+                    System.out.println("here");
+                    return true;
+                }
+
+
                 if (currentArr[i] <= currentSticks) {
                     currentSticks -= currentArr[i];
-
+                    System.out.println("total sticks: " + currentSticks);
                     if (currentSticks == 0 && turnCounter % 2 == 0) {
                         return true;
                     }
+                    turnCounter++;
+//                    if(i < currentArr.length && currentArr[i+1] > currentSticks){
+//                        return true;
+//                    }
                 }
-                turnCounter++;
+                else{
+                    break;
+                }
+
 
             }
             //reset to try next possible order
+            System.out.println("-------RESET-------");
             currentSticks = numberOfSticks;
+            turnCounter = 0;
             allPossibleOrders.pop();
 
         }
