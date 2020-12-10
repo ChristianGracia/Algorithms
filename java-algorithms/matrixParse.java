@@ -41,6 +41,7 @@ public class Main {
                         {'a', 'b', 'c', 'd', 'e', 'e'},
                 };
 
+        print_spiral(matrix, 4, 4);
         print_spiral(matrix2, 5, 5);
 
     }
@@ -68,13 +69,13 @@ public class Main {
 
 
             //go right
-            for (; currentX < coveredRight && orderedCharsIncrementor < matrixLength; currentX++) {
+            for (; currentX < coveredRight; currentX++) {
                 orderedChars[orderedCharsIncrementor++] = matrix[currentY][currentX];
             }
             traversals++;
 
             //go down
-            for (; currentY < coveredBottom && orderedCharsIncrementor < matrixLength; currentY++) {
+            for (; currentY < coveredBottom; currentY++) {
                 orderedChars[orderedCharsIncrementor++] = matrix[currentY][currentX];
             }
             coveredLeft++;
@@ -83,14 +84,14 @@ public class Main {
 
 
             //go left
-            for (; currentX >= coveredLeft && orderedCharsIncrementor < matrixLength; ) {
+            for (; currentX >= coveredLeft;) {
                 orderedChars[orderedCharsIncrementor++] = matrix[currentY][currentX--];
             }
             traversals++;
             coveredRight--;
 
             // go up
-            for (; currentY >= coveredTop && orderedCharsIncrementor < matrixLength; ) {
+            for (; currentY >= coveredTop;) {
                 orderedChars[orderedCharsIncrementor++] = matrix[currentY--][currentX];
             }
             traversals++;
@@ -99,7 +100,6 @@ public class Main {
             currentX = coveredLeft;
         }
         System.out.println(orderedChars);
-        System.out.println(orderedChars.length);
     }
 }
 
