@@ -8,90 +8,78 @@ public class Main {
 
         int[] moveChoices = {1, 4, 2};
 
-        //System.out.println(win(3, moveChoices));
+        System.out.println(win(3, moveChoices));
+        System.out.println("---------------------");
         System.out.println(win(5, moveChoices));
 
     }
 
-    public static Stack<int[]> getAllOrdersOfItems(int[] arr) {
-        int[] a = arr.clone();
-        ArrayList<String> combinationsAsString = new ArrayList<String>();
-        Stack<int[]> possibleOrders
-                = new Stack<>();
-        int temp;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-                String obj = Arrays.toString(a);
-                if (!combinationsAsString.contains(obj)) {
-                    combinationsAsString.add(obj);
+    public static Stack<int[]> getAllOrdersOfItems(int[] arr, int k, Stack<int[]> stackOfOrders) {
 
-                    possibleOrders.add(a);
-                }
-                a = arr.clone();
+
+        if (k == arr.length) {
+            int[] temp = new int[arr.length];
+            System.arraycopy(arr, 0, temp, 0, 3);
+            stackOfOrders.add(temp);
+        } else {
+            for (int i = k; i < arr.length; i++) {
+                int temp = arr[k];
+                arr[k] = arr[i];
+                arr[i] = temp;
+
+                getAllOrdersOfItems(arr, k + 1, stackOfOrders);
+
+                temp = arr[k];
+                arr[k] = arr[i];
+                arr[i] = temp;
             }
         }
-        return possibleOrders;
+        return stackOfOrders;
+    }
+
+    public static boolean checkIfMovesAvailable(int numberOfSticks, int[] moveChoices, int index) {
+
+        for (int i = index; i < moveChoices.length; i++) {
+            if (moveChoices[i] <= numberOfSticks) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
     public static boolean win(int numberOfSticks, int[] moveChoices) {
 
         int currentSticks = numberOfSticks;
-        int[] tempMoveArr = moveChoices;
-        int turnCounter = 0;
 
-        Stack allPossibleOrders = getAllOrdersOfItems(moveChoices);
 
-        System.out.println(allPossibleOrders.size());
+        Stack<int[]> allPossibleOrders = getAllOrdersOfItems(moveChoices, 0, new Stack<int[]>());
 
         while (allPossibleOrders.size() > 0) {
+            int[] arr = allPossibleOrders.pop();
 
-            int[] currentArr = (int[]) allPossibleOrders.peek();
-
-            //printing
-            for(int j = 0; j < currentArr.length; j++){
-                System.out.print(currentArr[j] + ", ");
-            }
-            System.out.println();
-
-            for (int i = 0; i < moveChoices.length; i++) {
-
-                System.out.println("Current sticks: " + currentSticks + " " + "Current value: " + currentArr[i]);
-
-                //if current value is less then sticks then subtract, if 0 the win
-                //if oponnent has no moves win
-                if(turnCounter % 2 != 0 && i == moveChoices.length){
-                    System.out.println("here");
-                    return true;
-                }
+            for (int i = 0; i < arr.length; i++) {
 
 
-                if (currentArr[i] <= currentSticks) {
-                    currentSticks -= currentArr[i];
-                    System.out.println("total sticks: " + currentSticks);
-                    if (currentSticks == 0 && turnCounter % 2 == 0) {
+                if (currentSticks - arr[i] >= 0) {
+
+                    currentSticks -= arr[i];
+
+                    if (currentSticks == 0 || !checkIfMovesAvailable(currentSticks, arr, i + 1)) {
                         return true;
+                    } else {
+                        if ((i + 1 <= arr.length - 1 && currentSticks - arr[i + 1] == 0)) {
+                            break;
+                        }
                     }
-                    turnCounter++;
-//                    if(i < currentArr.length && currentArr[i+1] > currentSticks){
-//                        return true;
-//                    }
-                }
-                else{
+
+
+                } else {
                     break;
                 }
 
-
             }
-            //reset to try next possible order
-            System.out.println("-------RESET-------");
             currentSticks = numberOfSticks;
-            turnCounter = 0;
-            allPossibleOrders.pop();
-
         }
         return false;
     }
