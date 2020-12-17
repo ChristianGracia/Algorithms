@@ -1,41 +1,60 @@
 package com.cg;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-        String[] related = new String[]{"10000", "00100", "00010", "00001"};
-        String[] related1 = new String[]{"10000", "00100", "00010", "00001"};
+        String[] related = new String[]{"1100", "1110", "0110", "0001"};
+        String[] related1 = new String[]{"10000", "01000", "00100", "00001"};
         ArrayList<String[]> relatedStrings = new ArrayList<>();
         relatedStrings.add(related);
-//        relatedStrings.add(related1);
+        relatedStrings.add(related1);
 
-
-        for (int i = 0; i < relatedStrings.size(); i++) {
-            countGroups(relatedStrings.get(i));
+        for (String[] relatedString : relatedStrings) {
+            System.out.println(countGroups(relatedString));
         }
     }
 
-    public static boolean checkAroundGrouping(String[] binaryDigitStrings, int arrayIndex, int letterIndex) {
+    public static boolean checkForGroups(String[] binaryDigitStrings, int arrayIndex, int letterIndex) {
+
+        int valueCounterX = 0;
+        int valueCounterY = 0;
+
+        // check vertically
+        for (int i = 0; i < binaryDigitStrings.length; i++) {
+
+            if (Character.getNumericValue(binaryDigitStrings[i].charAt(letterIndex)) == 1) {
+                valueCounterX++;
+            }
 
 
-        return true;
+        }
 
+        // check horizontally
+        for (int i = 0; i < binaryDigitStrings[arrayIndex].length(); i++) {
+
+            if (Character.getNumericValue(binaryDigitStrings[arrayIndex].charAt(i)) == 1) {
+                valueCounterY++;
+            }
+
+
+        }
+
+        return valueCounterX > 1 || valueCounterY > 1;
     }
 
-    //accepts an array of strings of binary digits
     public static int countGroups(String[] binaryDigitStrings) {
-        int groups = 0;
+        int groups = 1;
         for (int arrayIndex = 0; arrayIndex < binaryDigitStrings.length; arrayIndex++) {
-            //System.out.println(binaryDigitStrings[arrayIndex]);
-            for (int letterIndex = 0; letterIndex < binaryDigitStrings[arrayIndex].length() - 1; letterIndex++) {
-                System.out.println(binaryDigitStrings[arrayIndex].charAt(letterIndex));
-                char currentNumber = binaryDigitStrings[arrayIndex].charAt(letterIndex);
-                if (currentNumber == "1" && checkAroundGrouping(binaryDigitStrings, arrayIndex, letterIndex)) {
+
+            for (int letterIndex = 0; letterIndex < binaryDigitStrings[arrayIndex].length(); letterIndex++) {
+
+                int currentNumber = Character.getNumericValue(binaryDigitStrings[arrayIndex].charAt(letterIndex));
+
+                if (currentNumber == 1 && !checkForGroups(binaryDigitStrings, arrayIndex, letterIndex)) {
                     groups++;
                 }
 
