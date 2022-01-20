@@ -4,21 +4,21 @@ good code -> readability, scalability
 
 ## Types
 
-O(1) Constant- no loops
+O(1) Constant - no loops
 
-O(log N) Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search)
+O(log N) Logarithmic - usually searching algorithms have log n if they are sorted (Binary Search)
 
-O(n) Linear- for loops, while loops through n items
+O(n) Linear - for loops, while loops through n items
 
-O(n log(n)) Log Liniear- usually sorting operations
+O(n log(n)) Log Linear - usually sorting operations
 
-O(n^2) Quadratic- every element in a collection needs to be compared to ever other element. Two
+O(n^2) Quadratic - every element in a collection needs to be compared to ever other element. Two
 
 nested loops
 
-O(2^n) Exponential- recursive algorithms that solves a problem of size N
+O(2^n) Exponential - recursive algorithms that solves a problem of size N
 
-O(n!) Factorial- you are adding a loop for every element
+O(n!) Factorial - you are adding a loop for every element
 
 **Iterating through half a collection is still O(n)**
 
@@ -36,17 +36,17 @@ Outside Function call (function())
 
 ## Rules
 
-Rule 1: Always worst Case
+Rule 1: Always worst Case ex -> searching array, assume value being looked for is in last index of array
 
-Rule 2: Remove Constants
+Rule 2: Remove Constants ex -> O(4 + 5n) becomes O(n)
 
 Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
 
 O(a\*b)
 
-- for steps in order
+\+ for steps in order
 
-* for nested steps
+\* for nested steps
 
 Rule 4: Drop Non-dominant terms
 
