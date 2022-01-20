@@ -42,9 +42,7 @@ Rule 1: Always worst Case ex -> searching array, assume value being looked for i
 
 Rule 2: Remove Constants ex -> O(4 + 5n) becomes O(n)
 
-Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
-
-O(a\*b)
+Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be O(a\*b)
 
 \+ for steps in order
 
