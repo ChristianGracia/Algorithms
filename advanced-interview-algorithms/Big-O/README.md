@@ -2,6 +2,8 @@
 
 good code -> readability, scalability
 
+[big O cheatsheet](https://www.bigocheatsheet.com)
+
 ## Types
 
 O(1) Constant - no loops

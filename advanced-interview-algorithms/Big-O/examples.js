@@ -11,11 +11,7 @@ function example1(input) {
   return a; // O(1)
 }
 
-// Big O(3 + 4n)
-
-// drop constants
-
-// simplified to O(n)
+// Big O(3 + 4n) -> drop constants -> simplified to O(n)
 
 function example2(input) {
   let a = 5; // O(1)
@@ -33,11 +29,7 @@ function example2(input) {
   let whoAmI = "I don't know"; // O(1)
 }
 
-// Big O(4 + 5n)
-
-// drop constants
-
-// simplified to O(n)
+// Big O(4 + 5n) -> drop constants -> simplified to O(n)
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -53,3 +45,19 @@ function twoParams2(a, b) {
 }
 
 // Big O(a * b) because nested
+
+////////////////////////////////////////////////////////////////////////////
+
+function removeNonDominantsRuleEx(numbers) {
+  numbers.forEach(function (number) {
+    console.log(number);
+  });
+
+  numbers.forEach(function (firstNumber) {
+    numbers.forEach(function (secondNumber) {
+      console.log(firstNumber + secondNumber);
+    });
+  });
+}
+
+// Big O(n + n^2) becomes O(n^2) because we remove non dominant
