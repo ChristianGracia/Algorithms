@@ -1,6 +1,8 @@
 # Big O
 
-good code -> readability, scalability
+**good code** -> readability, scalability
+
+**three pillars of programming** -> readable, speed, memory
 
 [big O cheatsheet](https://www.bigocheatsheet.com)
 
@@ -50,7 +52,7 @@ Rule 3: Different inputs should have different variables. O(a+b). A and B arrays
 
 Rule 4: Drop Non-dominant terms
 
-# What causes Space complexity
+## What causes Space Complexity
 
 Variables
 
