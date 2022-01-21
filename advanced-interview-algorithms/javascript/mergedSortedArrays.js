@@ -1,3 +1,4 @@
+// O(a + b) Time complexity, O(a + b) Space complexity
 function mergeSortedArrays(array1, array2) {
   if (array1.length === 0) {
     return array2;
