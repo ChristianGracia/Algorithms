@@ -14,13 +14,13 @@ function hasPairWithSum1(arr, sum) {
 // Time complexity - O(n)
 // Space complexity - O(n)
 function hasPairWithSum2(arr, sum) {
-  const mySet = new Set();
+  const set = new Set();
   const len = arr.length;
   for (let i = 0; i < len; i++) {
-    if (mySet.has(arr[i])) {
+    if (set.has(arr[i])) {
       return true;
     }
-    mySet.add(sum - arr[i]);
+    set.add(sum - arr[i]);
   }
   return false;
 }
