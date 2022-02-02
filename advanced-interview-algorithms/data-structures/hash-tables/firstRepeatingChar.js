@@ -1,3 +1,5 @@
+// O(n) time complexity O(n) space complexity
+
 const firstRepeatingCharacter = (nums) => {
     const map = {};
     for (let i = 0; i < nums.length; i++) {
