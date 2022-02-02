@@ -9,7 +9,6 @@ class HashTable {
       for (let i = 0; i < key.length; i++){
           hash = (hash + key.charCodeAt(i) * i) % this.data.length
       }
-      console.log(hash)
       return hash;
     }
 
@@ -69,11 +68,9 @@ class HashTable {
     }
   }
   
-  const hashTable = new HashTable(50);
+  const hashTable = new HashTable(3);
   hashTable.set('cats', 23);
   hashTable.set('dogs1', 10000);
-  console.log(hashTable);
-  console.log(hashTable.get('cats'));
   hashTable.set('dogs2', 9);
   hashTable.set('dogs3', 9);
   console.log(hashTable.keys());
