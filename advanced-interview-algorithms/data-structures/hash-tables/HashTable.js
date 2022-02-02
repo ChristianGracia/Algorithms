@@ -36,11 +36,23 @@ class HashTable {
         this.data[hash].push([key, value]);
         return this.data;
     }
+
+    keys() {
+        const keysArray = [];
+        for(let i = 0; i < this.data.length; i++) {
+            if (this.data[i]) {
+                keysArray.push(this.data[i][0][0]);
+            }
+        }
+        return keysArray;
+    }
   }
   
   const hashTable = new HashTable(50);
-  hashTable.set('dogs', 10000)
-  console.log(hashTable)
-  console.log(hashTable.get('cats'))
-  hashTable.set('dogs', 9)
-  console.log(hashTable)
+  hashTable.set('cats', 23);
+  hashTable.set('dogs1', 10000);
+  console.log(hashTable);
+  console.log(hashTable.get('cats'));
+  hashTable.set('dogs2', 9);
+  hashTable.set('dogs3', 9);
+  console.log(hashTable.keys());
