@@ -78,6 +78,24 @@ class DoublyLinkedList {
         this.length--;
         return this.printList()
     }
+
+    reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
+        let first = this.head;
+        this.tail = this.head;
+        let second = first.next;
+        while(second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first;
+        return this.printList();
+    }
 }
 
 const doubleLinkedList = new DoublyLinkedList(10);
@@ -91,5 +109,5 @@ doubleLinkedList.append(14);
 // console.log(doubleLinkedList.printList());
 // // doubleLinkedList.insert(2, 333333)
 console.log(doubleLinkedList.printList());
-doubleLinkedList.remove(1)
-console.log(doubleLinkedList.printList());
+// doubleLinkedList.remove(1)
+console.log(doubleLinkedList.reverse());
