@@ -41,9 +41,9 @@
 
 
 // this also works
-
+// O(n) because unshift method is O(n)
 var rotate = function(nums, k) {
-    nums.unshift(...nums.splice(- (k % nums.length)));
+    nums.unshift(...nums.splice(-(k % nums.length)));
     // console.log(...nums.splice(- (k % nums.length)))
     return nums
 };
