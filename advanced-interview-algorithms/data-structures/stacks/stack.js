@@ -5,6 +5,8 @@ class Node {
     }
 }
   
+
+// as linked list
 class Stack {
     constructor(){
         this.top = null;
@@ -53,3 +55,34 @@ console.log(stack.pop());
 console.log(stack.pop())
 console.log(stack.pop())
 stack.peek();
+
+// as array
+
+
+
+class ArrayStack {
+    constructor(){
+        this.array = []
+    }
+    peek() {
+        return this.array[this.array.length-1]
+    }
+    push(value){
+        this.array.push(value);
+        return this;
+    }
+    pop(){
+        this.array.pop();
+        return this;
+    }
+}
+
+const arrayStack = new ArrayStack();
+arrayStack.push('43');
+console.log(arrayStack.peek());
+arrayStack.push('3343');
+console.log(arrayStack.peek());
+console.log(arrayStack.pop());
+console.log(arrayStack.peek());
+console.log(arrayStack.pop());
+console.log(arrayStack.peek());
