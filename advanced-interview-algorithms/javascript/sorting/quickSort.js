@@ -1,5 +1,7 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
+// if partition is the lowest or highest element in array can be O(n^2), cant guarantee pivot is good, then dont use
+
 function quickSort(array, left, right){
   const len = array.length; 
   let pivot;
