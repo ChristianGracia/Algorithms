@@ -35,6 +35,11 @@
 // cons
 // slow lookup
 
+// tries
+// tries allow you to know if a word or part of a word exists in text
+// auto completion, serahcing words in dictionary
+//  O(length of word) 
+
 class Node {
     constructor(value){
       this.left = null;
