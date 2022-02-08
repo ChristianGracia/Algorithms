@@ -14,6 +14,21 @@
 // BINARY SEARCH TREES aren't the fastest for anything, usually O(log n), but in some conditions these outperform objects and arrays
 // perform well if balanced
 
+// two types of balanced search tree
+
+// AVL tree or red black tree
+
+// What's the main reason for choosing Red black trees instead of AVL trees?
+
+// Both red-black trees and AVL trees are the most commonly used balanced binary search trees and they support insertion, deletion and look-up in guaranteed O(logN) time. However, there are following points of comparison between the two:
+
+// AVL trees are more rigidly balanced and hence provide faster look-ups. Thus for a look-up intensive task use an AVL tree.
+// For an insert intensive tasks, use a Red-Black tree.
+// AVL trees store the balance factor at each node. This takes O(N) extra space. However, if we know that the keys that will be inserted in the tree will always be greater than zero, we can use the sign bit of the keys to store the colour information of a red-black tree. Thus, in such cases red-black tree takes no extra space.
+// What are the application of Red black tree?
+
+// Red-black trees are more general purpose. They do relatively well on add, remove, and look-up but AVL trees have faster look-ups at the cost of slower add/remove. Red-black tree is used in the following:
+
 class Node {
     constructor(value){
       this.left = null;
@@ -79,10 +94,10 @@ class BinarySearchTree {
         let currentNode = this.root;
         let parentNode = null;
         while(currentNode){
-          if(value < currentNode.value){
+          if (value < currentNode.value){
             parentNode = currentNode;
             currentNode = currentNode.left;
-          } else if(value > currentNode.value){
+          } else if (value > currentNode.value){
             parentNode = currentNode;
             currentNode = currentNode.right;
           } else if (currentNode.value === value) {
