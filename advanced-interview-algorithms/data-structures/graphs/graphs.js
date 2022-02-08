@@ -11,6 +11,9 @@
 
 // graphs
 
+// pros - relationships
+// cons - scaling is hard
+
 // edge list
 const graph1 = [[0, 2], [2,3], [2, 1], [1, 3]]
 
