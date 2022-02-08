@@ -29,6 +29,12 @@
 
 // Red-black trees are more general purpose. They do relatively well on add, remove, and look-up but AVL trees have faster look-ups at the cost of slower add/remove. Red-black tree is used in the following:
 
+// binary heaps
+// pros
+// better then o(n), priority, flexible size, fast insert
+// cons
+// slow lookup
+
 class Node {
     constructor(value){
       this.left = null;
